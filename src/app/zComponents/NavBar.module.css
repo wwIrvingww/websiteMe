@@ -1,0 +1,77 @@
+ 
+.navbar {
+    font-family: var(--font-family, 'Montserrat', sans-serif);
+    color: var(--primary-color, #0070f3);
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .brandName {
+    color: #000; /* Color negro */
+    text-decoration: none; /* Elimina el subrayado */
+
+  }
+  
+  .brandName:focus,
+  .brandName:active,
+  .brandName:hover {
+    color: #000; /* Mantén el color negro en todos los estados */
+  }
+  
+  .menuButtonContainer {
+    display: none;
+  }
+  
+  
+  .menuButton {
+    color: var(--secondary-color, #ff4081);
+    font-family: var(--font-family, 'Montserrat', sans-serif);
+  }
+  
+  
+  .navList {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navItem {
+    font-size: 16px;
+  }
+  
+  .navLink {
+    color: #000;
+    text-decoration: none; /* Elimina el subrayado */
+    font-weight: normal; /* Texto normal */
+  }
+  
+  .navLink.active {
+    font-weight: bold; /* Negrita cuando está activo */
+  }
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .navList {
+      flex-direction: column;
+      gap: 10px;
+      display: none;
+    }
+  
+    .navList.open {
+      display: flex;
+    }
+  
+    .menuButtonContainer {
+      display: flex;
+      justify-content: flex-end;
+      flex-grow: 1;
+    }
+  }
+  
