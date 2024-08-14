@@ -1,0 +1,57 @@
+.container {
+    background-color: #EBEBF2;
+    margin: 0;
+    min-height: 100vh;
+    position: relative; /* Necesario para el posicionamiento absoluto de las líneas */
+    display: grid;
+    grid-template-columns: calc(100vw / 3.851) 1fr; /* Primer columna alinea con la línea vertical */
+  }
+  
+  .vertical_line {
+    background-color: #000;
+    height: 100vh;
+    width: 0.1vw; /* Ancho relativo para que se ajuste según el tamaño de la pantalla */
+    position: absolute;
+    left: calc((100vw / 3.851)); /* Proporción del ancho de la pantalla */
+  }
+  
+  .horizontal_line {
+    background-color: #000;
+    width: 100vw;
+    height: 0.3vh; /* Alto relativo para que se ajuste según el tamaño de la pantalla */
+    position: absolute;
+    top: calc(100vh / 3.095); /* Proporción de la altura de la pantalla */
+  }
+  
+  .title_container {
+    background-color: transparent;
+    grid-column: 2; /* Coloca el contenedor en la segunda columna del grid */
+    margin-left: calc(-0.67 * (100vw / 3.851)); /* Desplazamiento hacia la izquierda 2.86 veces la proporción */
+  }
+  
+  .title_container h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 10vw; /* Tamaño relativo para que se ajuste según el tamaño de la pantalla */
+    font-weight: 750; /* Extrabold */
+    color: #000; /* Color negro o el que prefieras */
+  }
+  
+  /* Media queries para ajustar estilos según el tamaño de la pantalla */
+  @media (max-width: 1200px) {
+    .title_container h1 {
+      font-size: 4vw;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .title_container h1 {
+      font-size: 3.5vw;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .title_container h1 {
+      font-size: 3vw;
+    }
+  }
+  

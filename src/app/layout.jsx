@@ -6,9 +6,9 @@ import NavBar from './zComponents/NavBar';
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body>
-        <NextUIProvider>
-          <NavBar />
+      <body style={{ margin: 0, overflow: 'hidden' }}>
+      <NextUIProvider>
+          {/* <NavBar /> */}
           <main>{children}</main>
         </NextUIProvider>
       </body>
@@ -17,3 +17,5 @@ const RootLayout = ({ children }) => {
 };
 
 export default RootLayout;
+
+
