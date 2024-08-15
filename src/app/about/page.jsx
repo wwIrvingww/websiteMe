@@ -12,7 +12,7 @@ const AboutMe = () => {
           <img src={'https://i.pinimg.com/564x/c6/65/ba/c665badb4b8a0d8903daa5038748b179.jpg'} alt={'image left'}/>
         </div>
         <div className={styles.limage_text}>
-          <h4>Let me talk...</h4>
+          <h4>Let me talk you...</h4>
         </div>
       </div>
 
@@ -48,7 +48,7 @@ const AboutMe = () => {
 
       {/* Segundo NParagraph con contenido diferente */}
       <div className={styles.nparagraph_container_right}>
-        <NParagraph subtitle="Different Subtitle" content="This is the content of the second NParagraph. It has different text and is positioned to the right of the first paragraph." />
+        <NParagraph subtitle="Different Subtitle" content="This is the content of the second NParagraph. It has different text and is positioned to the right of the first paragraph. This is the content of the second NParagraph. It has different text and is positioned to the right of the first paragraph. This is the content of the second NParagraph. It has different text and is positioned to the right of the first paragraph.This is the content of the second NParagraph. It has different text and is positioned to the right of the first paragraph.This is the content of the second NParagraph." />
       </div>
 
       {/* Tercer NParagraph a la derecha del segundo */}

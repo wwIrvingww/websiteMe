@@ -1,6 +1,6 @@
 .paragraph_container {
     width: 18vw;
-
+    position: relative;
 }
 
 .paragraph_container p {
