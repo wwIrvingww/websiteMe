@@ -1,0 +1,24 @@
+.paragraph_container {
+    position: relative;
+    margin: 20px;  /* Margen alrededor del contenedor */
+    width: 20vw;
+    /* top:30vh; */
+
+}
+
+.paragraph_container h2 {
+    font-family: 'Montserrat', sans-serif;  /* Familia de fuente */
+    font-size: 1.1rem;  /* Tamaño del título */
+    font-weight: 600;  /* Semibold */
+    color: #000;  /* Color del texto */
+    margin-bottom: 10px;  /* Espacio entre el título y el párrafo */
+}
+
+.paragraph_container p {
+    text-align: justify;  /* Asegura que todas las líneas estén alineadas de manera recta */
+    line-height: 1.8;  /* Ajusta el interlineado */
+    font-family: 'Montserrat', sans-serif;  /* Familia de fuente */
+    font-size: 1rem;  /* Tamaño de la fuente */
+    color: #000;  /* Color del texto */
+    font-weight: lighter;
+}

@@ -1,0 +1,21 @@
+.paragraph_container {
+    width: 18vw;
+
+}
+
+.paragraph_container p {
+    text-align: justify;  /* Asegura que todas las líneas estén alineadas de manera recta */
+    line-height: 1.8;  /* Ajusta el interlineado */
+    font-family: 'Montserrat', sans-serif;  /* Familia de fuente similar a la imagen */
+    font-size: 1rem;  /* Tamaño de la fuente */
+    color: #000;  /* Color del texto */
+    margin: 20px;  /* Margen alrededor del párrafo */
+    font-weight: 10;
+}
+
+.paragraph_container p::first-letter {
+    font-size: 2rem;  /* Tamaño más grande para la primera letra */
+    font-weight: bold;  /* Negrita para la primera letra */
+    color: #000;  /* Color de la primera letra */
+    
+}
