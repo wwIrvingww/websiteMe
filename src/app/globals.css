@@ -14,4 +14,14 @@ html, body {
 * {
     box-sizing: border-box;
 }
+
+/* Ocultar barras de desplazamiento en navegadores basados en WebKit */
+body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Para otros navegadores */
+  body {
+    scrollbar-width: none; /* Firefox */
+  }
   
