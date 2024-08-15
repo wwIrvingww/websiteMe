@@ -8,7 +8,7 @@ const RootLayout = ({ children }) => {
     <html lang="en">
       <body style={{ margin: 0, height: '100vh', overflow: 'scroll', scrollbarWidth: 'none' }}>
         <NextUIProvider>
-          {/* <NavBar /> */}
+          <NavBar />
           <main>{children}</main>
         </NextUIProvider>
       </body>

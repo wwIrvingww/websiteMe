@@ -1,77 +1,70 @@
- 
-.navbar {
-    font-family: var(--font-family, 'Montserrat', sans-serif);
-    color: var(--primary-color, #0070f3);
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-  .brand {
-    display: flex;
-    align-items: center;
-  }
-  
-  .brandName {
-    color: #000; /* Color negro */
-    text-decoration: none; /* Elimina el subrayado */
+.navbarContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 10vh; /* Sensible area width */
+  z-index: 1000;
+}
 
-  }
-  
-  .brandName:focus,
-  .brandName:active,
-  .brandName:hover {
-    color: #000; /* Mantén el color negro en todos los estados */
-  }
-  
-  .menuButtonContainer {
-    display: none;
-  }
-  
-  
-  .menuButton {
-    color: var(--secondary-color, #ff4081);
-    font-family: var(--font-family, 'Montserrat', sans-serif);
-  }
-  
-  
-  .navList {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .navItem {
-    font-size: 16px;
-  }
-  
-  .navLink {
-    color: #000;
-    text-decoration: none; /* Elimina el subrayado */
-    font-weight: normal; /* Texto normal */
-  }
-  
-  .navLink.active {
-    font-weight: bold; /* Negrita cuando está activo */
-  }
-  /* Responsivo */
-  @media (max-width: 768px) {
-    .navList {
-      flex-direction: column;
-      gap: 10px;
-      display: none;
-    }
-  
-    .navList.open {
-      display: flex;
-    }
-  
-    .menuButtonContainer {
-      display: flex;
-      justify-content: flex-end;
-      flex-grow: 1;
-    }
-  }
-  
+.navbar {
+  font-family: var(--font-family, 'Montserrat', sans-serif);
+  color: #B4B9BF;
+  background-color: #1E2226;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-100%); /* Oculta la sidebar */
+  transition: transform 0.4s ease, opacity 0.4s ease; /* Animación suave al abrir/cerrar */
+  z-index: 999; /* Asegura que esté encima del contenido */
+  opacity: 0; /* Inicialmente transparente */
+}
+
+.navbar.open {
+  transform: translateX(0); /* Muestra la sidebar */
+  opacity: 1; /* Vuelve visible la sidebar */
+}
+
+.brand {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.brandName {
+  color: #B4B9BF;
+  text-decoration: none;
+}
+
+.brandName:focus,
+.brandName:active,
+.brandName:hover {
+  color: #FFF; /* Mantén el color blanco en todos los estados */
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.navItem {
+  font-size: 24px;
+}
+
+.navLink {
+  color: #B4B9BF;
+  text-decoration: none;
+}
+
+.navLink.active {
+  color: #FFF; /* Color blanco cuando está activo */
+}

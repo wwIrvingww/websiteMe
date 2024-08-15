@@ -20,7 +20,7 @@
     width: 100vw;
     height: 0.3vh;
     position: absolute;
-    top: calc(100vh / 3.097);
+    top: calc((100vh / 3.097));
 }
   
 .title_container {

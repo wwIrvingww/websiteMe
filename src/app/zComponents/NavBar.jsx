@@ -21,32 +21,37 @@ export default function NavBar() {
     };
   }, []);
 
+  // Abre el menú cuando el mouse pasa por el borde izquierdo
+  const handleMouseEnter = () => {
+    setMenuOpen(true);
+  };
+
+  // Cierra el menú cuando el mouse sale de la barra lateral
+  const handleMouseLeave = () => {
+    setMenuOpen(false);
+  };
+
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.brand}>
-        <a href="/" className={styles.brandName}>ACME</a>
+    <div className={styles.navbarContainer} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <div className={`${styles.navbar} ${menuOpen ? styles.open : ""}`}>
+        <div className={styles.brand}>
+          <a href="#" className={styles.brandName}>ACME</a>
+        </div>
+        <ul ref={menuRef} className={`${styles.navList} ${menuOpen ? styles.open : ""}`}>
+          <li className={styles.navItem}>
+            <a href="/about" className={pathname === "/about" ? `${styles.navLink} ${styles.active}` : styles.navLink}>About me</a>
+          </li>
+          <li className={styles.navItem}>
+            <a href="/blog" className={pathname === "/blog" ? `${styles.navLink} ${styles.active}` : styles.navLink}>Blog</a>
+          </li>
+          <li className={styles.navItem}>
+            <a href="/portfolio" className={pathname === "/portfolio" ? `${styles.navLink} ${styles.active}` : styles.navLink}>Portfolio</a>
+          </li>
+          <li className={styles.navItem}>
+            <a href="/contact" className={pathname === "/contact" ? `${styles.navLink} ${styles.active}` : styles.navLink}>Contact</a>
+          </li>
+        </ul>
       </div>
-      <div className={styles.menuButtonContainer}>
-        {!menuOpen && (
-          <button className={styles.menuButton} onClick={() => setMenuOpen(!menuOpen)}>
-            ☰
-          </button>
-        )}
-      </div>
-      <ul ref={menuRef} className={`${styles.navList} ${menuOpen ? styles.open : ""}`}>
-        <li className={styles.navItem}>
-          <a href="/about" className={pathname === "/about" ? `${styles.navLink} ${styles.active}` : styles.navLink}>About me</a>
-        </li>
-        <li className={styles.navItem}>
-          <a href="/blog" className={pathname === "/blog" ? `${styles.navLink} ${styles.active}` : styles.navLink}>Blog</a>
-        </li>
-        <li className={styles.navItem}>
-          <a href="/portfolio" className={pathname === "/portfolio" ? `${styles.navLink} ${styles.active}` : styles.navLink}>Portfolio</a>
-        </li>
-        <li className={styles.navItem}>
-          <a href="/contact" className={pathname === "/contact" ? `${styles.navLink} ${styles.active}` : styles.navLink}>Contact</a>
-        </li>
-      </ul>
-    </nav>
+    </div>
   );
 }
