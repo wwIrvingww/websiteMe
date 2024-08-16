@@ -3,14 +3,15 @@
   top: 0;
   left: 0;
   height: 100vh;
-  width: 10vh; /* Sensible area width */
+  width: 20vh; /* Sensible area width */
   z-index: 1000;
 }
 
 .navbar {
   font-family: var(--font-family, 'Montserrat', sans-serif);
   color: #B4B9BF;
-  background-color: #1E2226;
+  background-color: #1e2226;
+  opacity: 0.5; /* Ajusta la opacidad */
   position: fixed;
   top: 0;
   left: 0;
@@ -30,30 +31,14 @@
   opacity: 1; /* Vuelve visible la sidebar */
 }
 
-.brand {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  cursor: pointer;
-}
-
-.brandName {
-  color: #B4B9BF;
-  text-decoration: none;
-}
-
-.brandName:focus,
-.brandName:active,
-.brandName:hover {
-  color: #FFF; /* Mantén el color blanco en todos los estados */
-}
-
 .navList {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: center;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  height: 100vh; /* Asegura que el ul ocupe toda la altura para centrar verticalmente */
 }
 
 .navItem {

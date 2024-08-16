@@ -34,10 +34,10 @@ export default function NavBar() {
   return (
     <div className={styles.navbarContainer} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div className={`${styles.navbar} ${menuOpen ? styles.open : ""}`}>
-        <div className={styles.brand}>
-          <a href="#" className={styles.brandName}>ACME</a>
-        </div>
         <ul ref={menuRef} className={`${styles.navList} ${menuOpen ? styles.open : ""}`}>
+          <li className={styles.navItem}>
+            <a href="/" className={pathname === "/" ? `${styles.navLink} ${styles.active}` : styles.navLink}>Home</a>
+          </li>
           <li className={styles.navItem}>
             <a href="/about" className={pathname === "/about" ? `${styles.navLink} ${styles.active}` : styles.navLink}>About me</a>
           </li>

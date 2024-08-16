@@ -1,17 +1,14 @@
-/* Blog.module.css */
 .container {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Centra el iframe horizontalmente */
+  align-items: center; /* Centra el iframe verticalmente */
+}
   
-  .iframe-blog {
-    width: 100vh;
-    height: 100vw;
-    border: none;
-  }
+.iframeBlog {
+  width: 100vw; /* calc(100vw - 40px) Ajusta el ancho del iframe para dejar margen */ 
+  height: 100vh;  /* calc(100vh - 40px); Ajusta el alto del iframe para dejar margen */
+  margin: 20px; /* Agrega márgenes de 20px en todos los lados */
+}
   

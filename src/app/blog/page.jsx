@@ -3,11 +3,11 @@ import styles from './Blog.module.css';
 
 const Blog = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <iframe
         src="https://myblog-irving-acostas-projects-400bd115.vercel.app/"
         className={styles.iframeBlog}
-        style={{ width: '100vw', height: '100vh', margin: 0, overflow: 'hidden', border: 'none' }} // Agregando 'border: none'
+        style={{ overflow: 'hidden', border: 'none', margin:0 }}
       ></iframe>
     </div>
   );
