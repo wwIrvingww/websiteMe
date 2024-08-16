@@ -27,6 +27,7 @@
     background-color: transparent;
     grid-column: 2;
     margin-left: calc(-0.67 * (100vw / 3.851));
+    margin-top: 2.5vh; /* Ajuste para mover hacia abajo el título */
 }
   
 .title_container h1 {

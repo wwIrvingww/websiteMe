@@ -5,7 +5,7 @@ const NParagraph = ({ subtitle, content }) => {
   return (
     <div className={styles.paragraph_container}>
       <h2>{subtitle}</h2>
-      <p>{content}</p>
+      <p dangerouslySetInnerHTML={{ __html: content }}></p>
     </div>
   );
 }

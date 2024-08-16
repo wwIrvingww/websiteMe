@@ -16,8 +16,8 @@ const Home = () => {
         <h2>UX/UI Designer</h2>
       </div>
       <div className={styles.image_container}>
-        <img src={'https://i.pinimg.com/564x/c2/88/5b/c2885bb7d30c39a67dadc71a52d167fe.jpg'} alt="Portrait 1" />
-        <img src={'https://i.pinimg.com/564x/c2/88/5b/c2885bb7d30c39a67dadc71a52d167fe.jpg'} alt="Portrait 2" />
+        <img src={'./portrait.png'} alt="Portrait 1" />
+        <img src={'./portrait.png'} alt="Portrait 2" />
       </div>
       <div className={styles.shape_container}> 
         <img src='./Shape1.png' alt='Shape 1'/>  {/* Asegúrate de usar <img> en lugar de <image> */}

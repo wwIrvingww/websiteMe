@@ -28,7 +28,7 @@
 
 .limage_about img {
     position: relative;
-    top: -40vh;
+    top: -30vh;
     left: 0;
     width: 100%;
     height: auto;
@@ -82,6 +82,7 @@
 .rimage_about img {
     position: relative;
     right: 10vh;
+    bottom: 100vh;
     height: auto;
 }
 

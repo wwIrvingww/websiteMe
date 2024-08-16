@@ -5,10 +5,9 @@ const CParagraph = () => {
   return (
     <div className={styles.paragraph_container}>
       <p>
-        Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s.<br />
-        <br />
-        When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.
-      </p>
+      Ser o no ser es la cuestión y yo soy un concepto en constante evolución, siempre en busca de nuevas experiencias y desafíos, en busca del cambio.<br />
+         <br />
+          Actualmente, estoy cursando la carrera de Ingeniería en Ciencias de la Computación y TI, habiendo completado la mitad de mi formación con éxito. Mi objetivo es romper con los estereotipos que rodean a mi profesión, demostrando que un ingeniero puede ser disruptivo y funcional al mismo tiempo. Me apasiona la estética y el equilibrio entre lo atractivo y lo práctico, tanto en mi vida personal como en mi trabajo.      </p>
     </div>
   );
 }
