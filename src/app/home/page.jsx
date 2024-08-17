@@ -7,7 +7,9 @@ const Home = () => {
       <div className={styles.vertical_line}></div>
       <div className={styles.horizontal_line}></div>
       <div className={styles.title_container}>
-        <h1>FABRICIO</h1>
+        <a href="/about" className={styles.title_link}>
+          <h1>FABRICIO</h1>
+        </a>
       </div>
       <div className={styles.designer_container}>
         <h2>Web Developer</h2>
@@ -20,7 +22,7 @@ const Home = () => {
         <img src={'./portrait.png'} alt="Portrait 2" />
       </div>
       <div className={styles.shape_container}> 
-        <img src='./Shape1.png' alt='Shape 1'/>  {/* Asegúrate de usar <img> en lugar de <image> */}
+        <img src='./Shape1.png' alt='Shape 1'/> 
       </div>
     </div>
   );
