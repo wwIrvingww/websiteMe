@@ -1,34 +1,29 @@
-"use client"
-import React, { useState, useEffect, useRef } from "react";
+"use client";
+import React, { useContext, useRef } from "react";
 import { usePathname } from "next/navigation";
 import styles from './NavBar.module.css';
+import { NavBarContext } from './NavBarContext';  // Importa el contexto
 
 export default function NavBar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { menuOpen, openMenu, toggleMenu } = useContext(NavBarContext);  // Obtén `openMenu` y `toggleMenu` del contexto
   const pathname = usePathname();
   const menuRef = useRef(null);
 
   // Cierra el menú al hacer clic fuera de él
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      toggleMenu();
+    }
+  };
 
   // Abre el menú cuando el mouse pasa por el borde izquierdo
   const handleMouseEnter = () => {
-    setMenuOpen(true);
+    openMenu();  // Utiliza la función openMenu del contexto
   };
 
   // Cierra el menú cuando el mouse sale de la barra lateral
   const handleMouseLeave = () => {
-    setMenuOpen(false);
+    toggleMenu();
   };
 
   return (

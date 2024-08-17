@@ -1,15 +1,17 @@
-import React from 'react';
+"use client"
+import React, { useContext } from 'react';
 import styles from './Home.module.css';
+import { NavBarContext } from '../zComponents/NavBarContext'; // Contexto para manejar el estado del navbar
 
 const Home = () => {
+  const { toggleMenu } = useContext(NavBarContext); // Obtener la función para alternar el menú
+
   return (
     <div className={styles.container}>
       <div className={styles.vertical_line}></div>
       <div className={styles.horizontal_line}></div>
       <div className={styles.title_container}>
-        <a href="/about" className={styles.title_link}>
-          <h1>FABRICIO</h1>
-        </a>
+        <h1 className={styles.title_link} onClick={toggleMenu}>FABRICIO</h1> {/* Llama a toggleMenu en clic */}
       </div>
       <div className={styles.designer_container}>
         <h2>Web Developer</h2>
@@ -29,3 +31,4 @@ const Home = () => {
 }
 
 export default Home;
+

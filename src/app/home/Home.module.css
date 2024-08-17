@@ -31,15 +31,10 @@
 }
 
 .title_link {
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    color: inherit; /* Mantiene el color del texto del h1 */
     cursor: pointer; /* Cambia el cursor al pasar por encima */
   }
   
-  .title_link:hover h1 {
-    opacity: 0.8; /* Efecto visual al pasar el mouse, opcional */
-  }
-  
+
   
 .title_container h1 {
     font-family: 'Outfit', sans-serif;
