@@ -1,0 +1,114 @@
+.formContainer {
+    width: 100%;
+    height: 100%;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  /* Organización del formulario en dos columnas en pantallas grandes */
+  @media (min-width: 1024px) {
+    form {
+      width: 100%;
+      max-width: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .formGroup {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      width: 48%; /* Cada input ocupa la mitad del ancho del contenedor */
+    }
+  
+    .formGroup.lastGroup {
+      width: 100%; /* El textarea ocupa todo el ancho */
+      margin-top: 40px;
+    }
+  
+    .formInput, .formTextarea {
+      width: 100%;
+      padding: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      border: none;
+      border-bottom: 1px solid #000; /* Solo borde inferior para inputs */
+      border-radius: 0;
+    }
+  
+    .formTextarea {
+      height: 150px;
+      border: 1px solid #000; /* Borde completo para el textarea */
+    }
+  
+    .formButton {
+      background-color: black;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100px;
+      align-self: flex-start;
+      margin-top: 20px; /* Separación del botón */
+    }
+  }
+  
+  /* Estilos generales para pantallas pequeñas (mobile-first) */
+  form {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .formGroup {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .formInput {
+    width: 100%; /* Ancho completo en pantallas pequeñas */
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+  }
+  
+  .formTextarea {
+    height: 150px;
+    width: 100%;
+    border: 1px solid #000;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+  }
+  
+  .formButton {
+    background-color: black;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    align-self: flex-start;
+  }
+  

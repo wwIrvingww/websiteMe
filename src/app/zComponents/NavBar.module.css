@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   height: 100vh;
-  width: 20vh; /* Sensible area width */
+  width: 25px; /* Sensible area width */
   z-index: 1000;
 }
 

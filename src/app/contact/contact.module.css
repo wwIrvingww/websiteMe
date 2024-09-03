@@ -1,59 +1,165 @@
-.container {
-    position: relative;
-    height: 100vh;
+/* Estilos generales */
+.contactWrapper {
+  width: 100vw;
+  display: flex;
+  flex-direction: column; /* Mantiene la disposición en columna en pantallas pequeñas */
+  overflow: hidden;
+}
+
+/* Estilos para dispositivos móviles */
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 33vh;
+  width: 100%;
+  background-color: #ffffff;
+  padding-left: 16px;
+}
+
+.title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: bold;
+  font-size: 70px;
+  margin-bottom: 30px;
+}
+
+.email, .handle, .name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 2px;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: calc(33vh - 10px);
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  margin: 40px 0;
+}
+
+.contactImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circleText {
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.textButtonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 16px;
+  margin-top: 20px;
+}
+
+.contactText {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: regular;
+  font-size: 16px;
+  text-align: justify;
+  margin-bottom: 20px;
+  width: 100%;
+  line-height: 1.5;
+}
+
+.contactButton {
+  background-color: black;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: left;
+}
+
+/* Sección del formulario */
+.formSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Estilos para laptops y dispositivos más grandes */
+@media (min-width: 1024px) {
+  .contactWrapper {
+    flex-direction: row; /* Cambia la disposición a fila */
+  }
+
+  .contactContainer {
+    width: calc(30vw + 100px); /* Ocupa un tercio del ancho total de la pantalla */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    border-right: 2px solid black; /* Borde sólido derecho */
+    padding-left: 32px; /* Aumenta el padding en pantallas más grandes */
+    padding-top: 300px;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el tamaño total */
+  }
+
+  .imageContainer {
+    width: calc(33vw - 200px); /* Ocupa un tercio del ancho total de la pantalla */
+    height: 100vh; /* Asegura que la imagen ocupe toda la altura disponible */
+    margin: 0; /* Quita el margen superior e inferior */
+    border-top: none; /* Elimina el borde superior */
+    border-bottom: none; /* Elimina el borde inferior */
+  }
+
+  .formSection {
+    width: calc(33vw + 100px); /* Ocupa un tercio del ancho total de la pantalla */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    border-left: 2px solid black; /* Borde sólido izquierdo */
+    padding: 32px; /* Ajusta el padding para pantallas más grandes */
+    box-sizing: border-box;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    overflow: hidden;
-    background-color: #1e2226;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
   }
-  
-  .message {
-    z-index: 2;
-    text-align: center;
-    animation: fadeIn 2s ease-in-out;
-  }
-  
-  .message h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-  }
-  
-  .message p {
-    font-size: 1.5rem;
-    color: #b4b9bf;
-  }
-  
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
+
+  .contactText {
     width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(30,34,38,1) 0%, rgba(20,22,24,1) 100%);
-    animation: pulse 6s infinite alternate;
-    z-index: 1;
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.5;
   }
-  
-  /* Animación de fondo */
-  @keyframes pulse {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0.7;
-    }
+
+  .contactButton {
+    display: none; /* Oculta el botón en pantallas grandes */
   }
-  
-  /* Animación de texto */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
+}
