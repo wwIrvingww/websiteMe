@@ -47,17 +47,54 @@ const List_project = () => {
 
 const ProjectDetail = ({ title }) => {
   const details = {
-    "Dibujo CSS": "1",
-    "UI APP IRTRA": "2",
-    "Blog": "3",
-    "SABTE": "4",
-    "Game of life": "5",
+    "Dibujo CSS": {
+      date: "April 2024",
+      p1: "Realicé un dibujo únicamente aplicando estilos CSS.",
+      image: "https://i.pinimg.com/736x/8e/c1/6a/8ec16ac6bfdf777518d13e1a7cde507d.jpg",
+      p2: "Además, cuenta con un diseño adaptativo e implementé animaciones y música de fondo.",
+      link: "https://example.com/dibujo-css"
+    },
+    "UI APP IRTRA": {
+      date: "March 2024",
+      p1: "Desarrollé una aplicación UI para el centro de diversiones IRTRA.",
+      image: "https://i.pinimg.com/736x/4d/6e/71/4d6e71e4748061c1d0b02ed0ab649d8c.jpg",
+      p2: "El diseño incluye características avanzadas y una experiencia de usuario amigable.",
+      link: "https://example.com/ui-app-irtra"
+    },
+    "Blog": {
+      date: "February 2024",
+      p1: "Desarrollé un blog con funcionalidades CRUD utilizando React y una base de datos Postgres.",
+      image: "https://i.pinimg.com/736x/23/a2/dc/23a2dc9c4c096fe3c87a6b5e9fb3dafc.jpg",
+      p2: "El blog permite la creación, actualización y eliminación de publicaciones.",
+      link: "https://blogvirng.netlify.app/"
+    },
+    "SABTE": {
+      date: "January 2024",
+      p1: "Colaboré con un equipo para desarrollar SABTE, un sistema de búsqueda de oficios específicos.",
+      image: "./sabte.png",
+      p2: "El sistema se basa en una red de confianza para conectar profesionales.",
+      link: "http://34.197.54.116:777/about"
+    },
+    "Game of life": {
+      date: "December 2023",
+      p1: "Implementé el algoritmo Conway's Game of Life usando Rust.",
+      image: "./conways.png",
+      p2: "Este proyecto es una visualización interactiva del famoso juego de la vida.",
+      link: "https://github.com/wwIrvingww/Conway-s-Game-Of-Life.git"
+    }
   };
+
+  const projectData = details[title];
 
   return (
     <div className='detail'>
-      {/* {details[title]} */}
-      <Project date="April 2024" p1="Realicé un dibujo únicmaente aplicando estilos CSS. " image="https://i.pinimg.com/736x/8e/c1/6a/8ec16ac6bfdf777518d13e1a7cde507d.jpg" p2="Además, cuenta con un diseño adaptativo.plementé Animaciones y música de fondo." link="ascas"/>
+      <Project 
+        date={projectData.date}
+        p1={projectData.p1}
+        image={projectData.image}
+        p2={projectData.p2}
+        link={projectData.link}
+      />
     </div>
   );
 };
