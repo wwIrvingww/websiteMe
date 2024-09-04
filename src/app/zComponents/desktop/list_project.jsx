@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './list_project.css';
+import Project from './project';
 
 const List_project = () => {
   const [hoveredTitle, setHoveredTitle] = useState(null);
@@ -55,7 +56,8 @@ const ProjectDetail = ({ title }) => {
 
   return (
     <div className='detail'>
-      {details[title]}
+      {/* {details[title]} */}
+      <Project date="April 2024" p1="Realicé un dibujo únicmaente aplicando estilos CSS. " image="https://i.pinimg.com/736x/8e/c1/6a/8ec16ac6bfdf777518d13e1a7cde507d.jpg" p2="Además, cuenta con un diseño adaptativo.plementé Animaciones y música de fondo." link="ascas"/>
     </div>
   );
 };

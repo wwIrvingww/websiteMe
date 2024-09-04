@@ -1,0 +1,56 @@
+.project-container {
+    background-color: #E1DFD3;
+    height: 600px;
+    width: 440px;
+    border: solid 10px black;
+    border-top-right-radius: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Estilo específico para el prop date */
+.project-date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+/* Estilo específico para el prop p1 */
+.project-p1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: lighter;
+    color: #333;
+    max-width: 190px;
+    margin-bottom: 20px;
+}
+
+/* Estilo específico para la imagen */
+.project-image {
+    width: 100%;
+    height: auto;
+    /* border-radius: 10px; */
+    margin-bottom: 20px;
+}
+
+/* Estilo específico para el prop p2 */
+.project-p2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: lighter;
+    color: #333;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+/* Estilo específico para el link */
+.project-link {
+    text-decoration: none;
+    color: blue;
+    font-size: 18px;
+    font-weight: bold;
+    align-self: flex-start; /* Alinea el link al inicio */
+}
