@@ -1,0 +1,44 @@
+.list-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.right-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'Abenda', sans-serif;
+    font-size: 55px;
+    font-weight:700;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-bottom: solid black 1px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between; /* Para alinear el texto y el símbolo */
+    align-items: flex-end; /* Alinea verticalmente el texto y el símbolo al final */
+}
+
+.symbol {
+    font-size: 80px; /* Ajusta el tamaño del símbolo para que se vea alineado */
+    padding-left: 20px;
+}
+
+.detail {
+    font-family: 'Abenda', sans-serif;
+    font-size: 150px;
+    font-weight: 700;
+}
