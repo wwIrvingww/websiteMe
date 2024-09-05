@@ -21,6 +21,21 @@ const List_project = () => {
     setHoveredTitle(null);
   };
 
+  const handleClick = (title) => {
+    const details = {
+      "Dibujo CSS": "https://lab04-cs-sonly-e468geh0q-irving-acostas-projects-400bd115.vercel.app/",
+      "UI APP IRTRA": "https://www.figma.com/proto/AMqrokozLbyUc70QCT4sqr/Irtra-experience?node-id=4-5&starting-point-node-id=3%3A684&t=pYUlRkHpRYitdwGa-1",
+      "Blog": "https://blogvirng.netlify.app/",
+      "SABTE": "http://34.197.54.116:777/about",
+      "Game of life": "https://github.com/wwIrvingww/Conway-s-Game-Of-Life.git"
+    };
+
+    const link = details[title];
+    if (link) {
+      window.open(link, '_blank');
+    }
+  };
+
   return (
     <div className='list-container'>
       <div className='left-side'>
@@ -30,6 +45,7 @@ const List_project = () => {
             className='title'
             onMouseEnter={() => handleMouseEnter(title)}
             onMouseLeave={handleMouseLeave}
+            onClick={() => handleClick(title)} /* Agrega el evento onClick */
           >
             <span>{title}</span>
             <span className='symbol'>✦</span>
@@ -52,14 +68,14 @@ const ProjectDetail = ({ title }) => {
       p1: "Realicé un dibujo únicamente aplicando estilos CSS.",
       image: "https://i.pinimg.com/736x/8e/c1/6a/8ec16ac6bfdf777518d13e1a7cde507d.jpg",
       p2: "Además, cuenta con un diseño adaptativo e implementé animaciones y música de fondo.",
-      link: "https://example.com/dibujo-css"
+      link: "https://lab04-cs-sonly-e468geh0q-irving-acostas-projects-400bd115.vercel.app/"
     },
     "UI APP IRTRA": {
       date: "March 2024",
       p1: "Desarrollé una aplicación UI para el centro de diversiones IRTRA.",
       image: "https://i.pinimg.com/736x/4d/6e/71/4d6e71e4748061c1d0b02ed0ab649d8c.jpg",
       p2: "El diseño incluye características avanzadas y una experiencia de usuario amigable.",
-      link: "https://example.com/ui-app-irtra"
+      link: "https://www.figma.com/proto/AMqrokozLbyUc70QCT4sqr/Irtra-experience?node-id=4-5&starting-point-node-id=3%3A684&t=pYUlRkHpRYitdwGa-1"
     },
     "Blog": {
       date: "February 2024",

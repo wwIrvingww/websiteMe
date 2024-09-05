@@ -1,3 +1,4 @@
+/* 
 .container {
     background-color: #EBEBF2;
     margin: 0;
@@ -21,17 +22,17 @@
     height: 0.3vh;
     position: absolute;
     top: calc((100vh / 3.097));
-}
-  
+} */
+/* 
 .title_container {
     background-color: transparent;
     grid-column: 2;
     margin-left: calc(-0.67 * (100vw / 3.851));
-    margin-top: 2.5vh; /* Ajuste para mover hacia abajo el título */
+    margin-top: 2.5vh; / Ajuste para mover hacia abajo el título 
 }
 
 .title_link {
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    cursor: pointer; 
   }
   
 
@@ -42,25 +43,26 @@
     font-weight: 750;
     color: #000;
 }
-  
+*/
+/*
 .designer_container {
     position: absolute;
-    transform: rotate(-90deg); /* Rotar el texto 90 grados a la izquierda */
-    left: calc(100vw / 7.20); /* Ajuste de la posición horizontal según la línea vertical */
-    top: calc(100vh / 1.60); /* Ajuste de la posición vertical según la línea horizontal */
+    transform: rotate(-90deg); 
+    left: calc(100vw / 7.20);
+    top: calc(100vh / 1.60); 
 }
   
 .ux_container {
     position: absolute;
-    right: 15vw; /* Ajuste de la posición horizontal desde el borde derecho */
-    top: calc(100vh / 5.095); /* Ajuste de la posición vertical según la línea horizontal */
+    right: 15vw;  
+    top: calc(100vh / 5.095); 
 }
   
 .designer_container h2,
 .ux_container h2 {
     font-family: 'Outfit', sans-serif;
-    font-size: 3vw; /* Tamaño relativo para que se ajuste según el tamaño de la pantalla */
-    font-weight: 500; /* Bold */
+    font-size: 3vw; 
+    font-weight: 500; 
     color: #000;
 }
 
@@ -91,13 +93,15 @@
     top: calc(100vh / 3.097 + 20vh);
     background-color: transparent;
 }
-  
+*/
+/*
 .shape_container img {
-    width: 18vw;  /* Ancho específico */
-    height: 42vh; /* Altura específica */
-    opacity: 1.0; /* Puedes ajustar la opacidad si lo deseas */
+    width: 18vw;  
+    height: 42vh; 
+    opacity: 1.0; 
 }
-  
+*/
+/*
 @media (max-width: 1200px) {
     .title_container h1 {
       font-size: 4vw;
@@ -127,3 +131,30 @@
       font-size: 1.5vw;
     }
 }
+*/
+
+/*Denn
+h1 {
+    margin: 50px;
+    position: relative;
+  }
+  
+  h1::before {
+    content: '';
+    height: 100vh;
+    width: 1px;
+    background: black;
+    position: absolute;
+    top: -50px;
+    left: -10px;
+  }
+  
+  h1::after {
+    content: '';
+    height: 1px;
+    width: 100vw;
+    background: black;
+    position: absolute;
+    left: -50px;
+    top: 50px
+  }*/

@@ -1,0 +1,251 @@
+/* Container for the landing section */
+.landing-container {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background-color: #EBEBF2; /* Dark background for contrast */
+}
+  
+/* Horizontal line styling */
+.horizontal-line {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black; /* Set to black */
+    transform: translateY(-50%);
+}
+  
+/* Vertical line styling */
+.vertical-line {
+    position: absolute;
+    left: 50px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: black; /* Set to black */
+}
+  
+  
+  /* Title container for proper positioning */
+.title-container {
+    position: absolute;
+    top: 50px;
+    left: 55px;
+}
+  
+  /* Title styling */
+.title {
+    color: black;
+    font-size: 55px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+  
+  /* Images container */
+.image-container {
+    position: absolute;
+    top: 240px; /* Position it relative to the title */
+    left: 60px; /* Position it relative to the vertical line */
+    width: auto;
+    height: auto;
+}
+  
+  /* Image styling */
+.image {
+    position: absolute;
+    width: 200px; /* Set the width, adjust as necessary */
+    height: auto; /* Keep the aspect ratio */
+}
+  
+  /* First image (bottom) */
+.image1 {
+    z-index: 2;
+    left: 50px;
+}
+  
+  /* Second image (top) with offset */
+.image2 {
+    z-index: 1;
+    top: -20px;
+    left: 20px;
+}
+  
+  /* Job Titles container */
+.job-titles {
+    position: relative;
+    width: 100%; /* Full width to allow proper positioning */
+}
+  
+  /* First Job Title (Web Developer) aligned to the left near vertical line */
+.job-title:first-child {
+    position: absolute;
+    top: 640px; /* Adjust based on image height */
+    left: 60px; /* Align with vertical line */
+    color: black;
+    font-size: 34px;
+    font-family: 'Outfit', sans-serif;
+    font-weight:600;
+}
+  
+  /* Second Job Title (UX/UI Designer) aligned to the bottom right */
+.job-title:last-child {
+    position: absolute;
+    bottom: -675px; /* Adjust as needed */
+    right: 10px; /* Align it to the right */
+    color: black ;
+    font-size: 34px;
+    font-family: 'Outfit', sans-serif;
+    font-weight:600;
+}
+
+.shape_container {
+    position: absolute;
+    right: 50px;
+    top: 730px;
+    background-color: transparent;
+    display: none;
+   
+}
+
+.shape_container img {
+    height: 335px;
+    opacity: 1.0;
+    display: none;
+}
+
+@media (min-height: 1000px){
+
+    .title-container {
+        top: 25px;
+        left: 155px;
+    }
+
+    .title {
+        font-size: 85px;
+    }
+    /* Horizontal line styling */
+    .horizontal-line {
+    top: 170px;
+    }
+  
+    /* Vertical line styling */
+    .vertical-line {
+        left: 150px;
+    
+    }
+
+    .image {
+        position: absolute;
+        width: 250px; /* Set the width, adjust as necessary */
+        height: auto; /* Keep the aspect ratio */
+    }
+
+    /* First image (bottom) */
+    .image1 {
+        z-index: 2;
+        left: 150px;
+    }  
+    
+    /* Second image (top) with offset */
+    .image2 {
+        z-index: 1;
+        top: -40px;
+        left: 100px;
+    }
+
+    .job-title:first-child {
+        left: 160px; /* Align with vertical line */
+        color: black;       
+    }
+    .shape_container{
+        display: block;
+    }
+    .shape_container img {
+        display: block;
+    }
+
+}
+
+@media (min-width: 1440px)  {
+    .title-container {
+        top:  -0px;
+        left: 155px;
+    }
+
+    .title {
+        font-size: 155px;
+    }
+    /* Horizontal line styling */
+    .horizontal-line {
+        top: 210px;
+    }
+  
+    /* Vertical line styling */
+    .vertical-line {
+        left: 400px;
+    }
+
+    .image {
+        position: absolute;
+        width: 270px; /* Set the width, adjust as necessary */
+        height: auto; /* Keep the aspect ratio */
+    }
+
+    /* First image (bottom) */
+    .image1 {
+        z-index: 2;
+        left: 920px;
+        top: 50px;
+    }  
+    
+    /* Second image (top) with offset */
+    .image2 {
+        z-index: 1;
+        top: 10px;
+        left: 1020px;
+    }
+
+    .job-title:first-child {
+        position: absolute;
+        left: 360px; /* Align with vertical line */
+        top: 640px; /* Adjust as needed */
+        color: black;
+        font-size: 34px;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+    
+        /* Rotate the text vertically */
+        transform: rotate(270deg);
+        transform-origin: left top; /* Adjust the origin point to control how it rotates */
+    }
+
+      /* Second Job Title (UX/UI Designer) aligned to the bottom right */
+    .job-title:last-child {
+        position: absolute;
+        bottom: -240px; /* Adjust as needed */
+        right: 140px; /* Align it to the right */
+        color: black ;
+        font-size: 34px;
+        font-family: 'Outfit', sans-serif;
+        font-weight:600;
+    }
+
+    .shape_container {
+        position: absolute;
+        right: 725px;
+        top: 370px;
+        background-color: transparent;
+        display: block;
+       
+    }
+    
+    .shape_container img {
+        height: 335px;
+        opacity: 1.0;
+        display: block;
+    }
+    
+}
+
