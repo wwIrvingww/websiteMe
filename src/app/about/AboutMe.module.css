@@ -1,129 +1,55 @@
-.container_about {
+.containerAbout {
     min-height: 100vh;
-    margin: 0;
-    background-color: #D7D7D9; 
     display: flex;
     flex-direction: column;
-    position: relative;
+    align-items: center;
+    margin: 0;
+    background-color: #D7D7D9; 
     overflow-y: scroll;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 
-.container_about::-webkit-scrollbar {
+.containerAbout::-webkit-scrollbar {
     display: none; /* Safari and Chrome */
 }
 
-.limage_container {
-    position: relative;
-    top: 10vh;
-    left: 0vw; /* Ajusta la posición general del contenedor */
-}
-
-.limage_about {
-    overflow: hidden;
-    height: 15vh;
-    width: 25vw;
-}
-
-.limage_about img {
-    position: relative;
-    top: -30vh;
-    left: 0;
+.headerContainer {
     width: 100%;
-    height: auto;
+    height: 70px; /* O el tamaño que prefieras para el contenedor */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde */
+    position: relative;
 }
 
-.limage_text {
-    margin-top: -22vh; /* Ajusta la distancia entre la imagen y el texto */
-    margin-left: 10px;
+.contactImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La imagen cubre todo el contenedor sin dejar espacios */
+    position: absolute;
 }
 
-.limage_text h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: smaller;
-    white-space: nowrap;
-}
-
-.title_container {
+.titleContainer {
+    padding-top: 30px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    background-color: transparent;
-    height: auto;
-    position: absolute;
-    top: 2.5vh;
-    left: 30vw;
+    align-items: center;
+    flex-direction: column;
 }
 
-.title_about h1,
-.title_me h1 {
+.title {
     font-family: 'Outfit', sans-serif;
-    font-size: 13vw;
-    font-weight: 750;
-    color: #000;
-    margin: 0;
-    line-height: 1;
-}
-
-.rimage_container {
-    position: absolute;
-    top: 40vh;
-    right: 0vw; /* Ajusta la posición general del contenedor */
-}
-
-.rimage_about {
-    overflow: hidden;
-    height: 18vh;
-    width: 15vw;
-}
-
-.rimage_about img {
-    position: relative;
-    right: 10vh;
-    bottom: 100vh;
-    height: auto;
-}
-
-.rimage_text {
-    margin-top: -25vh; /* Ajusta la distancia entre la imagen y el texto */
-}
-
-.rimage_text h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: smaller;
-    white-space: nowrap;
-}
-
-.cparagraph_container {
-    position: relative;
-    top: 30vh; 
-    left: 3vw; 
-    width: 20vw;
-}
-
-.nparagraph_container {
-    position: absolute;  /* Cambia a posición absoluta para relacionarlo con el contenedor del título */
-    top: calc(2.5vh + 13vw + 20vh);  /* Calcula la posición basándote en la posición del título y el tamaño del texto */
-    left: 23vw;  /* Alineado con el contenedor del título */
-    width: 25vw;  /* Ajusta el ancho según tus necesidades */
-}
-
-.nparagraph_container_right {
-    position: absolute;
-    top: calc(2.5vh + 13vw + 30vh); /* Mantener alineado verticalmente con el primer NParagraph */
-    left: calc(23vw + 25vw); /* Ajustar el valor para alinearlo a la derecha del primer NParagraph */
-    width: 25vw;
+    font-size: 80px;
+    font-weight: 700; /* Increased font-weight to match the boldness */
     text-align: center;
+    line-height: 0.9; /* Closer line spacing to match the image */
+    color: black; /* Assuming the text is black */
+    margin: 0; /* Removes default margin of h1 */
 }
 
+.lineBreak {
+    display: block; /* Ensures that About and Me are on separate lines */
+}
 
-.nparagraph_container_further_right {
-    position: absolute;
-    top: calc(2.5vh + 13vw + 30vh); /* Mantener alineado verticalmente con los otros NParagraphs */
-    /*left: calc(25vw + 27vw + 27vw);  Ajustar el valor para alinearlo a la derecha del segundo NParagraph */
-    right: 0vw;
-    width: 24vw;
-    text-align: end;
+.paragrahContainer{
+    width: calc(100% - 100px);
 }

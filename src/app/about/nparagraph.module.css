@@ -1,7 +1,5 @@
 .paragraph_container {
     position: relative;
-    margin: 20px;  /* Margen alrededor del contenedor */
-    width: 20vw;
     /* top:30vh; */
 
 }
@@ -11,7 +9,6 @@
     font-size: 1.1rem;  /* Tamaño del título */
     font-weight: 600;  /* Semibold */
     color: #000;  /* Color del texto */
-    margin-bottom: 10px;  /* Espacio entre el título y el párrafo */
 }
 
 .paragraph_container p {
