@@ -337,11 +337,11 @@
     
     .headerRightContainer {
         display: flex; 
-        width: 200px;
+        width: 240px;
         height: 140px;
         flex-direction: column;
         position: relative;
-        top: -160px;
+        top: -180px;
         margin-left: auto; /* Empuja todo el contenedor hacia la derecha */
         margin-right: 0; /* Asegura que no haya margen a la derecha */
         font-family: 'Outfit', sans-serif;
