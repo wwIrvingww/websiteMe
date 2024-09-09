@@ -8,7 +8,7 @@
     font-family: 'Montserrat', sans-serif;  /* Familia de fuente similar a la imagen */
     font-size: 1rem;  /* Tamaño de la fuente */
     color: #000;  /* Color del texto */
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .paragraph_container p::first-letter {
@@ -17,3 +17,57 @@
     color: #000;  /* Color de la primera letra */
     
 }
+
+@media (min-width: 600px) {
+    .paragraph_container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .paragraph_container p {
+        text-align: justify;  /* Asegura que todas las líneas estén alineadas de manera recta */
+        line-height: 1.8;  /* Ajusta el interlineado */
+        font-family: 'Montserrat', sans-serif;  /* Familia de fuente similar a la imagen */
+        font-size: 1rem;  /* Tamaño de la fuente */
+        color: #000;  /* Color del texto */
+        font-weight: 300;
+    }
+    
+    .paragraph_container p::first-letter {
+        font-size: 2rem;  /* Tamaño más grande para la primera letra */
+        font-weight: bold;  /* Negrita para la primera letra */
+        color: #000;  /* Color de la primera letra */
+    }    
+
+}
+
+@media (min-width: 1000px) {
+    .paragraph_container p {
+        font-size: 14px;  /* Tamaño de la fuente */
+        font-weight: 500;
+    }
+}
+
+@media (min-width: 1300px) {
+    .paragraph_container{
+        width: 100%;
+        align-self: center;
+    }
+
+    .paragraph_container h2 {
+        font-family: 'Montserrat', sans-serif;  /* Familia de fuente */
+        font-size: 1.1rem;  /* Tamaño del título */
+        font-weight: 600;  /* Semibold */
+        color: #000;  /* Color del texto */
+    }
+    
+    .paragraph_container p {
+        font-size: 14px;  /* Tamaño de la fuente */
+        font-weight: 500;
+
+    }
+
+}
+

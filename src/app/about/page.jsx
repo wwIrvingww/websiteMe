@@ -8,20 +8,43 @@ const AboutMe = () => {
     <div className={styles.containerAbout}>
       {/*Header Image */}
       <div className={styles.headerContainer}>
-        <img 
-          src="https://i.pinimg.com/736x/6f/58/87/6f58875204d87f535eb17badd7bed1a8.jpg" 
-          alt="Contact Image" 
-          className={styles.contactImage} 
-        />
+        <div className={styles.overlayTextContainer}>
+          <p className={styles.overlayText}>Let me talk...</p>
+        </div>
+        <div className={styles.contactImageContainer}>
+          <img
+            src="https://i.pinimg.com/736x/6f/58/87/6f58875204d87f535eb17badd7bed1a8.jpg"
+            alt="Contact Image"
+            className={styles.contactImage}
+          />
+        </div>
       </div>
 
       {/*Header Title*/}
       <div className={styles.titleContainer}>
         <h2 className={styles.title}>
-          <span className={styles.lineBreak}>About</span>
-          <span className={styles.lineBreak}>Me</span>
+          <span className={styles.lineBreak}>ABOUT</span>
+          <span className={styles.lineBreak}>ME</span>
         </h2>
       </div>
+
+      {/*Header Right Image*/}
+      <div className={styles.headerRightContainer}>
+        <div className={styles.verticalTextContainer}>
+          <p className={styles.overlayVertcialText}>Nice to</p>
+        </div>
+        <div className={styles.overlayRightTextContainer}>
+          <p className={styles.overlayRightText}>meet you!</p>
+        </div>
+        <div className={styles.contactRightImageContainer}>
+          <img
+            src="https://i.pinimg.com/736x/6f/58/87/6f58875204d87f535eb17badd7bed1a8.jpg"
+            alt="Contact Image"
+            className={styles.contacRightImage}
+          />
+        </div>
+      </div>
+
 
       {/* Horizontal Scrollable Paragraphs */}
       <div className={styles.scrollContainer}>

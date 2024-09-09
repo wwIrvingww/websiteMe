@@ -15,6 +15,14 @@
     position: relative;
 }
 
+.overlayTextContainer{
+    display: none;
+}
+
+.contactImageContainer{
+    display: block;
+}
+
 .contactImage {
     width: 100%;
     height: 100%;
@@ -44,6 +52,36 @@
     display: block;
 }
 
+
+.headerRightContainer{
+    display: none;
+}
+
+.verticalTextContainer{
+    display: none;
+}
+
+.overlayVertcialText{
+    display: none;
+}
+
+.overlayRightTextContainer{
+    display: none;
+}
+
+.overlayRightText{
+    display: none;
+}
+
+.contactRightImageContainer{
+    display: none;
+}
+
+.contacRightImage{
+    display: none;
+}
+
+
 /* Horizontal Scroll */
 .scrollContainer {
     width: 100%;
@@ -62,14 +100,299 @@
 
 .paragraphWrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-    scroll-snap-type: x mandatory; /* Smooth scrolling between sections */
 }
 
 .paragraphItem {
-    flex: 0 0 100%; /* Full width for each paragraph */
-    padding: 50px; /* Padding to prevent text from touching edges */
+    padding-top: 5px;
+    padding-right: 80px;
+    padding-bottom: 0;
+    padding-left: 80px;
     scroll-snap-align: start; /* Snap to the start of each paragraph */
     box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.overlayTextContianer{
+    display: none;
+}
+
+/* Updated desktop media query */
+@media (min-width: 1000px) {
+    .containerAbout {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #D7D7D9; 
+        overflow-x: hidden; /* Disable vertical scroll */
+        margin: 0;
+    }
+
+    .headerContainer {
+        width: 300px;
+        height: 110px; /* Ajuste para mostrar bien el diseño */
+        display: flex;
+        flex-direction: column; /* Cambiamos a 'column' para apilar texto e imagen */
+        position: relative;
+        top: 100px;
+        align-self: flex-start;
+        font-family: 'Outfit', sans-serif;
+    }
+    
+    .overlayTextContainer {
+        display: block;
+        width: 100%;
+        height: 15%; /* El texto ocupará el 20% de la altura */
+        font-family: 'Outfit', sans-serif;
+
+    }
+    
+    .overlayText {
+        position: relative;
+        font-family: 'Outfit', sans-serif;
+        font-size: 14px; /* Ajusté el tamaño para que sea más manejable */
+        color: black;
+        z-index: 1;
+        text-align: center;
+        margin: 0;
+        top:0;
+        line-height: 100%; /* Ajustar la alineación vertical */
+    }
+    
+    .contactImageContainer {
+        display: block;
+        width: 100%;
+        height: 80%; /* La imagen ocupará el 80% de la altura */
+    }
+    
+    .contactImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Mantener proporciones y cubrir el área */
+    }
+    
+
+    /* Ajustes para el título */
+    .titleContainer {
+        position: relative; /* Permite ajustar 'left' y 'top' */
+        top: -15px; /* Sube el título un poco */
+        left: 90px; /* Mueve el título 50px a la derecha */
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 145px;
+        margin: 0;
+        font-family: 'Outfit', sans-serif;
+        letter-spacing: 15px; /* Ajuste el espacio entre letras */
+    }
+
+    .lineBreak {
+        display: block;
+    }
+
+    /*Header right image*/
+    .headerRightContainer {
+        display: flex; 
+        width: 170px;
+        height: 110px;
+        flex-direction: column;
+        position: relative;
+        top: -130px;
+        margin-left: auto; /* Empuja todo el contenedor hacia la derecha */
+        margin-right: 0; /* Asegura que no haya margen a la derecha */
+        font-family: 'Outfit', sans-serif;
+    }
+    
+    .overlayRightTextContainer {
+        display: block; 
+        display: block;
+        width: 90%;
+        height: 15%; /* El texto ocupará el 20% de la altura */
+        font-family: 'Outfit', sans-serif;
+
+    }
+    
+    .overlayRightText {
+        display: block; 
+        position: relative;
+        font-family: 'Outfit', sans-serif;
+        font-size: 14px; /* Ajusté el tamaño para que sea más manejable */
+        color: black;
+        z-index: 1;
+        text-align: center;
+        margin: 0;
+        top:0;
+        line-height: 100%; /* Ajustar la alineación vertical */
+    }
+    
+    .contactRightImageContainer {
+        display: flex; 
+        justify-content: flex-end; /* Empuja la imagen hacia la derecha */
+        width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+        height: 80%; /* La imagen ocupará el 80% de la altura */
+    }
+    
+    .contacRightImage {
+        display: block; 
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Mantener proporciones y cubrir el área */
+    }
+
+    .verticalTextContainer{
+        display: block; 
+        width: 10%;
+        height: 100%;
+        position: absolute;
+        left:-40px;
+        top: 30px;
+
+    }
+
+    .overlayVertcialText{
+        display: block; 
+        writing-mode: vertical-rl; 
+        transform: rotate(180deg);
+    }
+    
+    
+    /* Contenedor principal de los párrafos con scroll horizontal */
+    /* Contenedor principal de los párrafos */
+    .scrollContainer {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: -315px;
+        padding: 20px 0;
+    }
+
+    /* Envoltorio de los párrafos usando Grid */
+    .paragraphWrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsivo: entre 1 y más columnas según el ancho disponible */
+        grid-gap: 10px; /* Espacio entre los párrafos */
+        width: 100%;
+        max-width: 1200px; /* Limitar el ancho total del contenido */
+        padding: 20px;
+    }
+
+    /* Estilo de cada párrafo */
+    .paragraphItem {
+        padding: 15px;
+  
+    }
+
+        /* Ajustar el `margin-top` de cada columna */
+    .paragraphItem:nth-child(1) {
+        margin-top: 0px; /* Primera columna en la posición original */
+    }
+
+    .paragraphItem:nth-child(2) {
+        margin-top: 110px; /* Segunda columna desplazada hacia abajo */
+        margin-right: 15px;
+    }
+
+    .paragraphItem:nth-child(3) {
+        margin-top: 145px; /* Tercera columna desplazada más abajo */
+    }
+
+    .paragraphItem:nth-child(4) {
+        margin-top: 150px; /* Cuarta columna desplazada aún más */
+        margin-left: 30px;
+
+    }
+
+    
+}
+
+/* Updated desktop media query */
+@media (min-width: 1300px) {
+
+    .title {
+        font-size: 200px;
+        margin: 0;
+        font-family: 'Outfit', sans-serif;
+        letter-spacing: 15px; /* Ajuste el espacio entre letras */
+    }
+
+    .lineBreak {
+        display: block;
+    }
+
+    .headerContainer {
+        width: 390px;
+        height: 130px; /* Ajuste para mostrar bien el diseño */
+        display: flex;
+        flex-direction: column; /* Cambiamos a 'column' para apilar texto e imagen */
+        position: relative;
+        top: 100px;
+        align-self: flex-start;
+        font-family: 'Outfit', sans-serif;
+    }
+    
+    .headerRightContainer {
+        display: flex; 
+        width: 200px;
+        height: 140px;
+        flex-direction: column;
+        position: relative;
+        top: -160px;
+        margin-left: auto; /* Empuja todo el contenedor hacia la derecha */
+        margin-right: 0; /* Asegura que no haya margen a la derecha */
+        font-family: 'Outfit', sans-serif;
+    }
+
+
+    /* Contenedor principal de los párrafos con scroll horizontal */
+    /* Contenedor principal de los párrafos */
+    .scrollContainer {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: -420px;
+        padding: 20px 0;
+    }
+
+    /* Envoltorio de los párrafos usando Grid */
+    .paragraphWrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsivo: entre 1 y más columnas según el ancho disponible */
+        grid-gap: 10px; /* Espacio entre los párrafos */
+        width: 100%;
+        max-width: calc(100% - 30px); /* Limitar el ancho total del contenido */
+        padding: 20px;
+    }
+
+    /* Estilo de cada párrafo */
+    .paragraphItem {
+        padding: 15px;
+  
+    }
+
+        /* Ajustar el `margin-top` de cada columna */
+    .paragraphItem:nth-child(1) {
+        margin-top: 0px; /* Primera columna en la posición original */
+        margin-right: 40px;
+        margin-left: 10px;
+    }
+
+    .paragraphItem:nth-child(2) {
+        margin-top: 195px; /* Segunda columna desplazada hacia abajo */
+        margin-right: 15px;
+    }
+
+    .paragraphItem:nth-child(3) {
+        margin-top: 235px; /* Tercera columna desplazada más abajo */
+    }
+
+    .paragraphItem:nth-child(4) {
+        margin-top: 220px; /* Cuarta columna desplazada aún más */
+        margin-left: 30px;
+
+    }    
 }
