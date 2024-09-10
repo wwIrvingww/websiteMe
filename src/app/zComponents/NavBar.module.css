@@ -23,7 +23,7 @@
   left: 0; /* La barra se despliega desde la izquierda */
   width: 100%;
   height: 60px;
-  background-color: transparent;
+  background-color: #B4B8BF;
   z-index: 1000;
   transform: translateX(-100%); /* Inicialmente oculta fuera de la pantalla a la izquierda */
   transition: transform 0.4s ease; /* Animación suave al mostrar/ocultar */
@@ -71,4 +71,84 @@
 /* Efectos hover en los enlaces */
 .navLink:hover {
   color: #555;
+}
+
+
+@media (max-width: 440px) {
+  /* Estilos para el icono en la esquina superior izquierda */
+  .menuIconContainer {
+    position: fixed;
+    top: 10px;
+    left: 5px; /* Mover el icono a la izquierda */
+    z-index: 2;
+    width: 35px; /* Tamaño del contenedor del icono */
+    height: 35px;
+    cursor: pointer;
+  }
+
+  /* Estilos para el ícono compass.svg */
+  .compassIcon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajustar la imagen dentro del contenedor */
+  }
+
+  /* Contenedor de la barra de navegación */
+  .navbarContainer {
+    position: fixed;
+    top: 0;
+    left: 0; /* La barra se despliega desde la izquierda */
+    width: 170px; /* Sidebar de ancho fijo */
+    height: 100vh; /* Ocupar toda la altura de la pantalla */
+    background-color: #fff;
+    z-index: 1000;
+    transform: translateX(-100%); /* Inicialmente oculta fuera de la pantalla a la izquierda */
+    transition: transform 0.4s ease; /* Animación suave al mostrar/ocultar */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea los items hacia la izquierda */
+    padding: 20px;
+    border-right: solid 1px black; /* Borde en el lado derecho */
+  }
+
+  /* Clase adicional para mostrar la barra cuando isOpen es true */
+  .navbarContainer.open {
+    transform: translateX(0); /* Muestra la barra de navegación */
+  }
+
+  /* Lista de navegación */
+  .navList {
+    display: flex;
+    flex-direction: column; /* Apilar elementos verticalmente */
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Elementos de la lista */
+  .navItem {
+    font-size: 16px;
+    margin-bottom: 15px; /* Añade espacio entre los elementos */
+  }
+
+  /* Enlaces de navegación */
+  .navLink {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300; /* Fuente más delgada */
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+  }
+
+  /* Estilo activo cuando está en la página actual */
+  .navLink.active {
+    font-weight: 400; /* Un poco más gruesa que el resto, pero sigue delgada */
+    color: #000;
+  }
+
+  /* Efectos hover en los enlaces */
+  .navLink:hover {
+    color: #555;
+  }
 }

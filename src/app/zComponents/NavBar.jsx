@@ -30,11 +30,11 @@ export default function NavBar() {
             <a href="/portfolio" className={pathname === "/portfolio" ? `${styles.navLink} ${styles.active}` : styles.navLink}>Portfolio</a>
           </li>
           <li className={styles.navItem}>
-            <a href="/contact" className={pathname === "/contact" ? `${styles.navLink} ${styles.active}` : styles.navLink}>Contact Me</a>
-          </li>
-          <li className={styles.navItem}>
             <a href="/blog" className={pathname === "/blog" ? `${styles.navLink} ${styles.active}` : styles.navLink}>Blog</a>
           </li>
+          <li className={styles.navItem}>
+            <a href="/contact" className={pathname === "/contact" ? `${styles.navLink} ${styles.active}` : styles.navLink}>Contact Me</a>
+          </li>     
         </ul>
       </nav>
     </>
