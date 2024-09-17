@@ -14,14 +14,22 @@
   font-family: 'Outfit', sans-serif;
   font-weight: bold;
   font-size: 30px;
+  opacity: 0; /* Inicialmente oculto para la animación */
 }
 
 .projects {
   display: block; 
 }
 
+.projects .project {
+  opacity: 0; /* Inicialmente oculto para la animación */
+  transform: translateX(-50px); /* Animación desde la izquierda */
+}
+
 .projects-list {
   display: none; 
+  opacity: 0; /* Inicialmente oculto para la animación */
+  transform: translateY(50px); /* Animación desde abajo */
 }
 
 /* Media query para pantallas mayores a 700px */

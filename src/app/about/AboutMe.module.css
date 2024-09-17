@@ -52,7 +52,6 @@
     display: block;
 }
 
-
 .headerRightContainer{
     display: none;
 }
@@ -80,7 +79,6 @@
 .contacRightImage{
     display: none;
 }
-
 
 /* Horizontal Scroll */
 .scrollContainer {
@@ -117,8 +115,21 @@
     display: none;
 }
 
+/* Animation for paragraph items */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Updated desktop media query */
 @media (min-width: 1000px) {
+
     .containerAbout {
         min-height: 100vh;
         display: flex;
@@ -172,7 +183,6 @@
         object-fit: cover; /* Mantener proporciones y cubrir el área */
     }
     
-
     /* Ajustes para el título */
     .titleContainer {
         position: relative; /* Permite ajustar 'left' y 'top' */
@@ -284,10 +294,13 @@
     /* Estilo de cada párrafo */
     .paragraphItem {
         padding: 15px;
-  
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s ease-out forwards;
+        animation-delay: 0.2s; /* Delay para una animación suave */
     }
 
-        /* Ajustar el `margin-top` de cada columna */
+    /* Ajustar el `margin-top` de cada columna */
     .paragraphItem:nth-child(1) {
         margin-top: 0px; /* Primera columna en la posición original */
     }
@@ -371,10 +384,13 @@
     /* Estilo de cada párrafo */
     .paragraphItem {
         padding: 15px;
-  
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s ease-out forwards;
+        animation-delay: 0.2s;
     }
 
-        /* Ajustar el `margin-top` de cada columna */
+    /* Ajustar el `margin-top` de cada columna */
     .paragraphItem:nth-child(1) {
         margin-top: 0px; /* Primera columna en la posición original */
         margin-right: 30px;

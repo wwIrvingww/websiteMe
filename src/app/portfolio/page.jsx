@@ -1,10 +1,42 @@
 "use client"
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './portfolio.module.css';
+import anime from 'animejs';
 import ProjectComponent from '../zComponents/mobile/project_component';
 import List_project from '../zComponents/desktop/list_project';
 
 const Portfolio = () => {
+
+  useEffect(() => {
+    // Animación del título
+    anime({
+      targets: `.${styles.titlecontainer}`,
+      opacity: [0, 1],
+      translateY: [-50, 0],
+      duration: 1000,
+      easing: 'easeOutExpo'
+    });
+
+    // Animación de los proyectos
+    anime({
+      targets: `.${styles.projects} .${styles.project}`,
+      opacity: [0, 1],
+      translateX: [-50, 0],
+      delay: anime.stagger(200),  // Retrasa cada elemento de manera escalonada
+      duration: 1000,
+      easing: 'easeOutExpo'
+    });
+
+    // Animación para la lista de proyectos en pantallas grandes
+    anime({
+      targets: `.${styles.projectsList}`,
+      opacity: [0, 1],
+      translateY: [50, 0],
+      duration: 1200,
+      easing: 'easeOutExpo'
+    });
+  }, []);
+
   return (
     <div className={styles.portfoliowrapper}>
       <div className={styles.titlecontainer}>

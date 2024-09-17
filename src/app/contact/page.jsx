@@ -1,8 +1,42 @@
-import React from 'react';
+'use client'
+import React, { useEffect } from 'react';
 import styles from './contact.module.css';
+import anime from 'animejs';
 import ContactForm from '../zComponents/mobile/contact_form';
 
 const Contact = () => {
+
+  useEffect(() => {
+    // Animación para el título
+    anime({
+      targets: `.${styles.title}`,
+      opacity: [0, 1],
+      translateY: [-50, 0],
+      duration: 1000,
+      easing: 'easeOutExpo'
+    });
+
+    // Animación para la imagen
+    anime({
+      targets: `.${styles.contactImage}`,
+      opacity: [0, 1],
+      translateX: [-100, 0],
+      delay: 500,
+      duration: 1500,
+      easing: 'easeOutExpo'
+    });
+
+    // Animación para el formulario
+    anime({
+      targets: `.${styles.formSection}`,
+      opacity: [0, 1],
+      translateX: [100, 0],
+      delay: 1000,
+      duration: 1500,
+      easing: 'easeOutExpo'
+    });
+  }, []);
+
   return (
     <div className={styles.contactWrapper}>
       <div className={styles.contactContainer}>
@@ -13,7 +47,11 @@ const Contact = () => {
       </div>
       
       <div className={styles.imageContainer}>
-        <img src="https://i.pinimg.com/564x/65/97/05/6597056913e5e8343f6d5e7f05d77ff5.jpg" alt="Contact Image" className={styles.contactImage} />
+        <img 
+          src="https://i.pinimg.com/564x/65/97/05/6597056913e5e8343f6d5e7f05d77ff5.jpg" 
+          alt="Contact Image" 
+          className={styles.contactImage} 
+        />
         <div className={styles.overlay}>
           <div className={styles.circle}>
             <span className={styles.circleText}>Hablemos</span>

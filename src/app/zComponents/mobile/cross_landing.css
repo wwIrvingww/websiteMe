@@ -4,7 +4,22 @@
     height: 100vh; /* Full viewport height */
     background-color: #EBEBF2; /* Dark background for contrast */
 }
-  
+
+/* Ocultar los elementos inicialmente */
+.job-titles,
+.image-container,
+.shape_container {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Una vez que las líneas estén animadas, mostrar los otros elementos */
+.landing-container.loaded .job-titles,
+.landing-container.loaded .image-container,
+.landing-container.loaded .shape_container {
+    opacity: 1;
+}
+
 /* Horizontal line styling */
 .horizontal-line {
     position: absolute;
@@ -12,10 +27,11 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: black; /* Set to black */
-    transform: translateY(-50%);
+    background-color: black;
+    transform: translateX(-100%); /* Start hidden to the left */
+    transition: transform 1s ease-in-out;
 }
-  
+
 /* Vertical line styling */
 .vertical-line {
     position: absolute;
@@ -23,18 +39,28 @@
     top: 0;
     height: 100%;
     width: 2px;
-    background-color: black; /* Set to black */
+    background-color: black;
+    transform: translateY(-100%); /* Start hidden at the top */
+    transition: transform 1s ease-in-out;
 }
-  
-  
-  /* Title container for proper positioning */
+
+/* Loaded state where the lines are visible */
+.landing-container.loaded .horizontal-line {
+    transform: translateX(0); /* Horizontal line moves to the final position */
+}
+
+.landing-container.loaded .vertical-line {
+    transform: translateY(0); /* Vertical line moves to the final position */
+}
+
+/* Title container for proper positioning */
 .title-container {
     position: absolute;
     top: 50px;
     left: 55px;
 }
   
-  /* Title styling */
+/* Title styling */
 .title {
     color: black;
     font-size: 55px;
@@ -42,8 +68,8 @@
     font-weight: bold;
     text-transform: uppercase;
 }
-  
-  /* Images container */
+
+/* Images container */
 .image-container {
     position: absolute;
     top: 240px; /* Position it relative to the title */
@@ -51,34 +77,34 @@
     width: auto;
     height: auto;
 }
-  
-  /* Image styling */
+
+/* Image styling */
 .image {
     position: absolute;
     width: 200px; /* Set the width, adjust as necessary */
     height: auto; /* Keep the aspect ratio */
 }
-  
-  /* First image (bottom) */
+
+/* First image (bottom) */
 .image1 {
     z-index: 2;
     left: 50px;
 }
-  
-  /* Second image (top) with offset */
+
+/* Second image (top) with offset */
 .image2 {
     z-index: 1;
     top: -20px;
     left: 20px;
 }
-  
-  /* Job Titles container */
+
+/* Job Titles container */
 .job-titles {
     position: relative;
     width: 100%; /* Full width to allow proper positioning */
 }
-  
-  /* First Job Title (Web Developer) aligned to the left near vertical line */
+
+/* First Job Title (Web Developer) aligned to the left near vertical line */
 .job-title:first-child {
     position: absolute;
     top: 640px; /* Adjust based on image height */
@@ -86,29 +112,62 @@
     color: black;
     font-size: 34px;
     font-family: 'Outfit', sans-serif;
-    font-weight:600;
+    font-weight: 600;
+    opacity: 0; /* Hidden initially */
 }
-  
-  /* Second Job Title (UX/UI Designer) aligned to the bottom right */
+
+/* Second Job Title (UX/UI Designer) aligned to the bottom right */
 .job-title:last-child {
     position: absolute;
     bottom: -675px; /* Adjust as needed */
     right: 10px; /* Align it to the right */
-    color: black ;
+    color: black;
     font-size: 34px;
     font-family: 'Outfit', sans-serif;
-    font-weight:600;
+    font-weight: 600;
+    opacity: 0; /* Hidden initially */
 }
 
+/* Animar títulos cuando la clase 'loaded' se activa sin rotación */
+.landing-container.loaded .job-title:first-child {
+    animation: slideInFromLeft 1s ease-out forwards;
+}
 
+.landing-container.loaded .job-title:last-child {
+    animation: slideInFromTop 1s ease-out forwards;
+}
 
+/* Animación para el primer título sin rotación (por defecto) */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%); /* Fuera de pantalla hacia la izquierda sin rotación */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Posición final sin rotación */
+        opacity: 1;
+    }
+}
+
+/* Animación para el segundo título (desplazamiento desde arriba) */
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%); /* Fuera de pantalla desde arriba */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Posición final */
+        opacity: 1;
+    }
+}
+
+/* Shape Container */
 .shape_container {
     position: absolute;
     right: 50px;
     top: 730px;
     background-color: transparent;
     display: none;
-   
 }
 
 .shape_container img {
@@ -117,8 +176,45 @@
     display: none;
 }
 
-@media (min-height: 1000px){
+/* Animación para pantallas entre 1000px y 1440px con rotación */
+@media (min-width: 1000px) {
+    @keyframes slideInFromLeftWithRotation {
+        0% {
+            transform: translateX(-100%) rotate(0deg); /* Inicia sin rotación */
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0) rotate(-10deg); /* Añade una rotación de -10 grados al finalizar */
+            opacity: 1;
+        }
+    }
 
+    /* Aplicar la animación con rotación */
+    .landing-container.loaded .job-title:first-child {
+        animation: slideInFromLeftWithRotation 1s ease-out forwards;
+    }
+}
+
+/* Animación para pantallas mayores o iguales a 1440px */
+@media (min-width: 1440px) {
+    @keyframes slideInFromLeftWithMoreRotation {
+        0% {
+            transform: translateX(-100%) rotate(0deg); /* Inicia sin rotación */
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0) rotate(-90deg); /* Rotación de -90 grados */
+            opacity: 1;
+        }
+    }
+
+    /* Aplicar la animación con mayor rotación */
+    .landing-container.loaded .job-title:first-child {
+        animation: slideInFromLeftWithMoreRotation 1s ease-out forwards;
+    }
+}
+
+@media (min-height: 1000px) {
     .title-container {
         top: 25px;
         left: 155px;
@@ -127,15 +223,15 @@
     .title {
         font-size: 85px;
     }
+
     /* Horizontal line styling */
     .horizontal-line {
-    top: 170px;
+        top: 170px;
     }
-  
+
     /* Vertical line styling */
     .vertical-line {
         left: 150px;
-    
     }
 
     .image {
@@ -148,8 +244,8 @@
     .image1 {
         z-index: 2;
         left: 150px;
-    }  
-    
+    }
+
     /* Second image (top) with offset */
     .image2 {
         z-index: 1;
@@ -159,31 +255,33 @@
 
     .job-title:first-child {
         left: 160px; /* Align with vertical line */
-        color: black;       
+        color: black;
     }
-    .shape_container{
+
+    .shape_container {
         display: block;
     }
+
     .shape_container img {
         display: block;
     }
-
 }
 
-@media (min-width: 1440px)  {
+@media (min-width: 1440px) {
     .title-container {
-        top:  -0px;
+        top: -0px;
         left: 155px;
     }
 
     .title {
         font-size: 155px;
     }
+
     /* Horizontal line styling */
     .horizontal-line {
         top: 210px;
     }
-  
+
     /* Vertical line styling */
     .vertical-line {
         left: 400px;
@@ -200,8 +298,8 @@
         z-index: 2;
         left: 920px;
         top: 50px;
-    }  
-    
+    }
+
     /* Second image (top) with offset */
     .image2 {
         z-index: 1;
@@ -217,21 +315,20 @@
         font-size: 34px;
         font-family: 'Outfit', sans-serif;
         font-weight: 600;
-    
         /* Rotate the text vertically */
         transform: rotate(270deg);
         transform-origin: left top; /* Adjust the origin point to control how it rotates */
     }
 
-      /* Second Job Title (UX/UI Designer) aligned to the bottom right */
+    /* Second Job Title (UX/UI Designer) aligned to the bottom right */
     .job-title:last-child {
         position: absolute;
         bottom: -240px; /* Adjust as needed */
         right: 140px; /* Align it to the right */
-        color: black ;
+        color: black;
         font-size: 34px;
         font-family: 'Outfit', sans-serif;
-        font-weight:600;
+        font-weight: 600;
     }
 
     .shape_container {
@@ -240,14 +337,11 @@
         top: 370px;
         background-color: transparent;
         display: block;
-       
     }
-    
+
     .shape_container img {
         height: 335px;
         opacity: 1.0;
         display: block;
     }
-    
 }
-

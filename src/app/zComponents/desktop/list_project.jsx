@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+'use client'
+import React, { useState, useRef, useEffect } from 'react';
 import './list_project.css';
 import Project from './project';
+import anime from 'animejs';
 
 const List_project = () => {
   const [hoveredTitle, setHoveredTitle] = useState(null);
+  const listRef = useRef(null);
 
   const titles = [
     "Dibujo CSS",
@@ -12,6 +15,18 @@ const List_project = () => {
     "SABTE",
     "Game of life"
   ];
+
+  // Animar títulos solo una vez al cargar el componente
+  useEffect(() => {
+    anime({
+      targets: listRef.current.querySelectorAll('.title'),
+      opacity: [0, 1],
+      translateX: [-20, 0],
+      easing: 'easeOutExpo',
+      duration: 800,
+      delay: anime.stagger(100) // Animación escalonada para cada título
+    });
+  }, []); // Ejecutar solo una vez
 
   const handleMouseEnter = (title) => {
     setHoveredTitle(title);
@@ -37,7 +52,7 @@ const List_project = () => {
   };
 
   return (
-    <div className='list-container'>
+    <div className='list-container' ref={listRef}>
       <div className='left-side'>
         {titles.map((title, index) => (
           <div
@@ -45,7 +60,7 @@ const List_project = () => {
             className='title'
             onMouseEnter={() => handleMouseEnter(title)}
             onMouseLeave={handleMouseLeave}
-            onClick={() => handleClick(title)} /* Agrega el evento onClick */
+            onClick={() => handleClick(title)} /* Evento onClick para redirigir */
           >
             <span>{title}</span>
             <span className='symbol'>✦</span>
@@ -58,7 +73,7 @@ const List_project = () => {
         )}
       </div>
     </div>
-  )
+  );
 };
 
 const ProjectDetail = ({ title }) => {
@@ -101,16 +116,34 @@ const ProjectDetail = ({ title }) => {
   };
 
   const projectData = details[title];
+  const projectRef = useRef(null);
+
+  useEffect(() => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth >= 700) {
+      anime({
+        targets: projectRef.current.querySelectorAll('.detail-element'),
+        opacity: [0, 1],
+        scale: [0.8, 1],
+        translateY: [20, 0],
+        easing: 'easeOutExpo',
+        duration: 800,
+        delay: anime.stagger(100) // Retraso en cascada de cada elemento
+      });
+    }
+  }, [title]);
 
   return (
-    <div className='detail'>
-      <Project 
-        date={projectData.date}
-        p1={projectData.p1}
-        image={projectData.image}
-        p2={projectData.p2}
-        link={projectData.link}
-      />
+    <div className='detail' ref={projectRef}>
+      <div className='detail-element'>
+        <Project 
+          date={projectData.date}
+          p1={projectData.p1}
+          image={projectData.image}
+          p2={projectData.p2}
+          link={projectData.link}
+        />
+      </div>
     </div>
   );
 };
