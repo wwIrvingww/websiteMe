@@ -5,32 +5,27 @@ import './contact_form.css';
 const ContactForm = () => {
   const form = useRef();
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-
-  //   emailjs.sendForm('default_service', 'template_706hhg9', form.current, 'gKwVdljT99tzjHHaG')
-  //     .then((result) => {
-  //         console.log(result.text);
-  //         alert("Mensaje enviado con éxito");
-  //     }, (error) => {
-  //         console.log(error.text);
-  //         alert("Hubo un error al enviar el mensaje");
-  //     });
-  // };
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm('service_4x12v4l', 'template_706hhg9', form.current, {
-        publicKey: 'dM1cUDoKgsER5yeoD',
-      })
+    const formData = {
+      user_name: form.current.user_name.value, // Usar user_name en lugar de from_name
+      subject: form.current.subject.value,
+      user_phone: form.current.user_phone.value,
+      message: form.current.message.value,
+      user_email: form.current.user_email.value,
+    };
+
+    emailjs.send("service_4x12v4l", "template_706hhg9", formData, "dM1cUDoKgsER5yeoD")
       .then(
         () => {
           console.log('SUCCESS!');
+          alert("Mensaje enviado con éxito");
         },
         (error) => {
           console.log('FAILED...', error.text);
-        },
+          alert("Hubo un error al enviar el mensaje");
+        }
       );
   };
 
