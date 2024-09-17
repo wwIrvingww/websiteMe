@@ -3,6 +3,13 @@
 
 /* styles/globals.css */
 
+@font-face {
+  font-family: 'Abenda';
+  src: url('/public/Abenda.woff2') format('woff2'),
+       url('/public/Abenda.woff') format('woff');
+}
+
+
 html, body {
     margin: 0;
     padding: 0;
