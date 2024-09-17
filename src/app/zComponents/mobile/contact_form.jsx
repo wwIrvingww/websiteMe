@@ -5,17 +5,33 @@ import './contact_form.css';
 const ContactForm = () => {
   const form = useRef();
 
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+
+  //   emailjs.sendForm('default_service', 'template_706hhg9', form.current, 'gKwVdljT99tzjHHaG')
+  //     .then((result) => {
+  //         console.log(result.text);
+  //         alert("Mensaje enviado con éxito");
+  //     }, (error) => {
+  //         console.log(error.text);
+  //         alert("Hubo un error al enviar el mensaje");
+  //     });
+  // };
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('default_service', 'template_706hhg9', form.current, 'gKwVdljT99tzjHHaG')
-      .then((result) => {
-          console.log(result.text);
-          alert("Mensaje enviado con éxito");
-      }, (error) => {
-          console.log(error.text);
-          alert("Hubo un error al enviar el mensaje");
-      });
+    emailjs
+      .sendForm('service_4x12v4l', 'template_706hhg9', form.current, {
+        publicKey: 'dM1cUDoKgsER5yeoD',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
   };
 
   return (
@@ -45,6 +61,6 @@ const ContactForm = () => {
       </form>
     </div>
   );
-}
+};
 
 export default ContactForm;
