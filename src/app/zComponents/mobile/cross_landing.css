@@ -176,26 +176,6 @@
     display: none;
 }
 
-/* Animación para pantallas entre 1000px y 1440px con rotación */
-
-/* Animación para pantallas mayores o iguales a 1440px */
-@media (min-width: 1440px) {
-    @keyframes slideInFromLeftWithMoreRotation {
-        0% {
-            transform: translateX(-100%) rotate(0deg); /* Inicia sin rotación */
-            opacity: 0;
-        }
-        100% {
-            transform: translateX(0) rotate(-90deg); /* Rotación de -90 grados */
-            opacity: 1;
-        }
-    }
-
-    /* Aplicar la animación con mayor rotación */
-    .landing-container.loaded .job-title:first-child {
-        animation: slideInFromLeftWithMoreRotation 1s ease-out forwards;
-    }
-}
 
 @media (max-height: 740px){
     /* First Job Title (Web Developer) aligned to the left near vertical line */
@@ -224,9 +204,96 @@
     
 }
 
+/* Animación para pantallas entre 1000px y 1440px con rotación */
+@media (min-width: 1000px) {
+    @keyframes slideInFromLeftWithRotation {
+        0% {
+            transform: translateX(-100%) rotate(0deg); /* Inicia sin rotación */
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0) rotate(-10deg); /* Añade una rotación de -10 grados al finalizar */
+            opacity: 1;
+        }
+    }
 
+    /* Aplicar la animación con rotación */
+    .landing-container.loaded .job-title:first-child {
+        animation: slideInFromLeftWithRotation 1s ease-out forwards;
+    }
+}
 
+/* Animación para pantallas mayores o iguales a 1440px */
+@media (min-width: 1440px) {
+    @keyframes slideInFromLeftWithMoreRotation {
+        0% {
+            transform: translateX(-100%) rotate(0deg); /* Inicia sin rotación */
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0) rotate(-90deg); /* Rotación de -90 grados */
+            opacity: 1;
+        }
+    }
 
+    /* Aplicar la animación con mayor rotación */
+    .landing-container.loaded .job-title:first-child {
+        animation: slideInFromLeftWithMoreRotation 1s ease-out forwards;
+    }
+}
+
+@media (min-height: 1000px) {
+    .title-container {
+        top: 25px;
+        left: 155px;
+    }
+
+    .title {
+        font-size: 85px;
+    }
+
+    /* Horizontal line styling */
+    .horizontal-line {
+        top: 170px;
+    }
+
+    /* Vertical line styling */
+    .vertical-line {
+        left: 150px;
+    }
+
+    .image {
+        position: absolute;
+        width: 250px; /* Set the width, adjust as necessary */
+        height: auto; /* Keep the aspect ratio */
+    }
+
+    /* First image (bottom) */
+    .image1 {
+        z-index: 2;
+        left: 150px;
+    }
+
+    /* Second image (top) with offset */
+    .image2 {
+        z-index: 1;
+        top: -40px;
+        left: 100px;
+    }
+
+    .job-title:first-child {
+        left: 160px; /* Align with vertical line */
+        color: black;
+    }
+
+    .shape_container {
+        display: block;
+    }
+
+    .shape_container img {
+        display: block;
+    }
+}
 
 @media (min-width: 1440px) {
     .title-container {
