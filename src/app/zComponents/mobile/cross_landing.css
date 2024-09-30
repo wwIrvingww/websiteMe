@@ -176,15 +176,30 @@
     display: none;
 }
 
-
-@media (max-height: 740px){
+/* Animación para pantallas entre 1000px y 1440px con rotación */
+@media (min-width: 1000px) {
+    /* Title container for proper positioning */
+    .title-container {
+        position: absolute;
+        top: 22px;
+        left: 55px;
+    }
+    
+    /* Title styling */
+    .title {
+        color: black;
+        font-size: 95px;
+        font-family: 'Outfit', sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
     /* First Job Title (Web Developer) aligned to the left near vertical line */
     .job-title:first-child {
         position: absolute;
-        top: 580px; /* Adjust based on image height */
+        top: 640px; /* Adjust based on image height */
         left: 60px; /* Align with vertical line */
         color: black;
-        font-size: 34px;
+        font-size: 54px;
         font-family: 'Outfit', sans-serif;
         font-weight: 600;
         opacity: 0; /* Hidden initially */
@@ -193,26 +208,63 @@
     /* Second Job Title (UX/UI Designer) aligned to the bottom right */
     .job-title:last-child {
         position: absolute;
-        top: 500px; /* Adjust as needed */
-        right: 0px; /* Align it to the right */
+        bottom: -675px; /* Adjust as needed */
+        right: 10px; /* Align it to the right */
         color: black;
-        font-size: 34px;
+        font-size: 54px;
         font-family: 'Outfit', sans-serif;
         font-weight: 600;
         opacity: 0; /* Hidden initially */
     }
-    
-}
+    /* Images container */
+    .image-container {
+        position: absolute;
+        top: 270px; /* Position it relative to the title */
+        left: 150px; /* Position it relative to the vertical line */
+        width: auto;
+        height: auto;
+    }
 
-/* Animación para pantallas entre 1000px y 1440px con rotación */
-@media (min-width: 1000px) {
+    /* Image styling */
+    .image {
+        position: absolute;
+        width: 240px; /* Set the width, adjust as necessary */
+        height: auto; /* Keep the aspect ratio */
+    }
+
+    /* First image (bottom) */
+    .image1 {
+        z-index: 2;
+        left: 50px;
+    }
+
+    /* Second image (top) with offset */
+    .image2 {
+        z-index: 1;
+        top: -20px;
+        left: 20px;
+    }
+
+    .shape_container {
+        position: absolute;
+        right: 50px;
+        top: 200px;
+        background-color: transparent;
+        display: block;
+    }
+    
+    .shape_container img {
+        height: 335px;
+        opacity: 1.0;
+        display: block;
+    }
     @keyframes slideInFromLeftWithRotation {
         0% {
             transform: translateX(-100%) rotate(0deg); /* Inicia sin rotación */
             opacity: 0;
         }
         100% {
-            transform: translateX(0) rotate(-10deg); /* Añade una rotación de -10 grados al finalizar */
+            transform: translateX(0) rotate(-0deg); /* Añade una rotación de -10 grados al finalizar */
             opacity: 1;
         }
     }
@@ -240,6 +292,33 @@
     .landing-container.loaded .job-title:first-child {
         animation: slideInFromLeftWithMoreRotation 1s ease-out forwards;
     }
+}
+
+@media (max-height: 670px){
+    /* First Job Title (Web Developer) aligned to the left near vertical line */
+    .job-title:first-child {
+        position: absolute;
+        top: 580px; /* Adjust based on image height */
+        left: 60px; /* Align with vertical line */
+        color: black;
+        font-size: 34px;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+        opacity: 0; /* Hidden initially */
+    }
+
+    /* Second Job Title (UX/UI Designer) aligned to the bottom right */
+    .job-title:last-child {
+        position: absolute;
+        top: 500px; /* Adjust as needed */
+        right: 0px; /* Align it to the right */
+        color: black;
+        font-size: 34px;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+        opacity: 0; /* Hidden initially */
+    }
+    
 }
 
 @media (min-height: 1000px) {
