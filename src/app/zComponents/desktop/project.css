@@ -1,20 +1,21 @@
 .project-container {
     background-color: #E1DFD3;
-    height: 550px;
+    max-height: 800px;
     width: 440px;
     border: solid 10px black;
     border-top-right-radius: 180px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 30px;
     /* Sombra solo a los lados */
-    box-shadow: -20px 0px 30px rgba(0, 0, 0, 0.6), 20px 0px 30px rgba(0, 0, 0, 0.6);
+    box-shadow: -20px 10px 30px rgba(0, 0, 0, 0.6), 20px 0px 30px rgba(0, 0, 0, 0.6);
     transition: box-shadow 0.3s ease-in-out;
 }
 
 .project-container:hover {
     /* Aumenta la sombra solo a los lados al hacer hover */
-    box-shadow: -25px 0px 40px rgba(0, 0, 0, 0.8), 25px 0px 40px rgba(0, 0, 0, 0.8);
+    margin-top: 10px;
+    box-shadow: -20px 05px 40px rgba(0, 0, 0, 0.8), 20px -05px 40px rgba(0, 0, 0, 0.8);
 }
 
 /* Estilo específico para el prop date */

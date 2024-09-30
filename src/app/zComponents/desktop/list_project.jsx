@@ -101,7 +101,7 @@ const ProjectDetail = ({ title }) => {
     },
     "SABTE": {
       date: "January 2024",
-      p1: "Colaboré con un equipo para desarrollar SABTE, un sistema de búsqueda de oficios específicos.",
+      p1: "Colaboré junto a un equipo para desarrollar un sistema de búsqueda de trabajo",
       image: "./sabte.png",
       p2: "El sistema se basa en una red de confianza para conectar profesionales.",
       link: "http://34.197.54.116:777/about"

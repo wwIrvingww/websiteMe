@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
-  margin-bottom: 120px;
+  margin-bottom: 12px;
 }
 
 .titlecontainer {
@@ -35,10 +35,11 @@
 /* Media query para pantallas mayores a 700px */
 @media (min-width: 700px) {
   .projects {
-    display: none; 
+    display: none;
   }
 
   .projects-list {
     display: block; 
+    height: 100vh;
   }
 }
