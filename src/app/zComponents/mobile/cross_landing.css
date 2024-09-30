@@ -294,6 +294,33 @@
     }
 }
 
+@media (max-height: 740px){
+    /* First Job Title (Web Developer) aligned to the left near vertical line */
+    .job-title:first-child {
+        position: absolute;
+        top: 580px; /* Adjust based on image height */
+        left: 60px; /* Align with vertical line */
+        color: black;
+        font-size: 34px;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+        opacity: 0; /* Hidden initially */
+    }
+
+    /* Second Job Title (UX/UI Designer) aligned to the bottom right */
+    .job-title:last-child {
+        position: absolute;
+        top: 500px; /* Adjust as needed */
+        right: 0px; /* Align it to the right */
+        color: black;
+        font-size: 34px;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+        opacity: 0; /* Hidden initially */
+    }
+    
+}
+
 @media (min-height: 1000px) {
     .title-container {
         top: 25px;
