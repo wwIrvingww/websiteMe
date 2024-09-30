@@ -100,7 +100,7 @@
     left: 0; /* La barra se despliega desde la izquierda */
     width: 170px; /* Sidebar de ancho fijo */
     height: 100vh; /* Ocupar toda la altura de la pantalla */
-    background-color: #fff;
+    background-color: #B4B8BF;
     z-index: 1000;
     transform: translateX(-100%); /* Inicialmente oculta fuera de la pantalla a la izquierda */
     transition: transform 0.4s ease; /* Animación suave al mostrar/ocultar */
@@ -108,7 +108,7 @@
     flex-direction: column;
     align-items: flex-start; /* Alinea los items hacia la izquierda */
     padding: 20px;
-    border-right: solid 1px black; /* Borde en el lado derecho */
+    /*border-right: solid 1px black;  Borde en el lado derecho */
   }
 
   /* Clase adicional para mostrar la barra cuando isOpen es true */
@@ -143,8 +143,15 @@
 
   /* Estilo activo cuando está en la página actual */
   .navLink.active {
-    font-weight: 400; /* Un poco más gruesa que el resto, pero sigue delgada */
+    font-weight: 500; /* Un poco más gruesa que el resto, pero sigue delgada */
     color: #000;
+  }
+  .navLink {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /* Fuente más delgada */
+    color: #00000084;
+    text-decoration: none;
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
   }
 
   /* Efectos hover en los enlaces */

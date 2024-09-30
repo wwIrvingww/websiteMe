@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #D7D7D9; 
+    background-color: #D7D7D9;
     overflow-x: hidden; /* Disable vertical scroll */
     margin: 0;
 }
@@ -28,6 +28,10 @@
     height: 100%;
     object-fit: cover;
     position: absolute;
+}
+
+.cvContainer{
+    display: none;
 }
 
 .titleContainer {
@@ -115,6 +119,22 @@
     display: none;
 }
 
+.videoContainer {
+    display: flex;
+    justify-content: center;
+    margin-left: 80px;
+    margin-right: 80px;
+    background-color: aqua;
+    margin-bottom: 70px;
+  }
+
+  .videoContainer iframe {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    aspect-ratio: 210 / 120;  /*Mantiene la proporción del video */
+  }
+
 /* Animation for paragraph items */
 @keyframes fadeInUp {
     0% {
@@ -135,7 +155,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #D7D7D9; 
+        background-color: #D7D7D9;
         overflow-x: hidden; /* Disable vertical scroll */
         margin: 0;
     }
@@ -150,7 +170,7 @@
         align-self: flex-start;
         font-family: 'Outfit', sans-serif;
     }
-    
+
     .overlayTextContainer {
         display: block;
         width: 100%;
@@ -158,7 +178,7 @@
         font-family: 'Outfit', sans-serif;
 
     }
-    
+
     .overlayText {
         position: relative;
         font-family: 'Outfit', sans-serif;
@@ -170,11 +190,12 @@
         top:0;
         line-height: 100%; /* Ajustar la alineación vertical */
     }
-    
+
     .contactImageContainer {
         display: block;
         width: 100%;
         height: 80%; /* La imagen ocupará el 80% de la altura */
+        position: relative; /* Para que el elemento .cvContainer se posicione absolutamente respecto a este contenedor */
     }
     
     .contactImage {
@@ -183,6 +204,24 @@
         object-fit: cover; /* Mantener proporciones y cubrir el área */
     }
     
+    .cvContainer {
+        background-color: rgba(0, 0, 0, 0.604); /* Fondo semitransparente */
+        height: 100%;
+        width: 100%;
+        display: flex; /* Utiliza flexbox para centrar el contenido */
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: center; /* Centrar verticalmente */
+        position: absolute; /* Para superponerse sobre la imagen */
+        top: 0; /* Para asegurarse de que cubra todo el contenedor */
+        left: 0;
+        font-family: 'Outfit', sans-serif; /* Asegúrate de tener la fuente importada */
+        font-size: 3rem; /* Tamaño de la fuente */
+        font-weight: 500;
+        color: #D7D7D9; /* Color del texto */
+        text-align: center;
+    }
+    
+
     /* Ajustes para el título */
     .titleContainer {
         position: relative; /* Permite ajustar 'left' y 'top' */
@@ -207,7 +246,7 @@
 
     /*Header right image*/
     .headerRightContainer {
-        display: flex; 
+        display: flex;
         width: 170px;
         height: 110px;
         flex-direction: column;
@@ -217,18 +256,18 @@
         margin-right: 0; /* Asegura que no haya margen a la derecha */
         font-family: 'Outfit', sans-serif;
     }
-    
+
     .overlayRightTextContainer {
-        display: block; 
+        display: block;
         display: block;
         width: 90%;
         height: 15%; /* El texto ocupará el 20% de la altura */
         font-family: 'Outfit', sans-serif;
 
     }
-    
+
     .overlayRightText {
-        display: block; 
+        display: block;
         position: relative;
         font-family: 'Outfit', sans-serif;
         font-size: 14px; /* Ajusté el tamaño para que sea más manejable */
@@ -239,38 +278,45 @@
         top:0;
         line-height: 100%; /* Ajustar la alineación vertical */
     }
-    
+
     .contactRightImageContainer {
-        display: flex; 
+        display: flex;
         justify-content: flex-end; /* Empuja la imagen hacia la derecha */
         width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
-        height: 80%; /* La imagen ocupará el 80% de la altura */
-    }
-    
-    .contacRightImage {
-        display: block; 
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Mantener proporciones y cubrir el área */
+        height: 100%; /* La imagen ocupará el 80% de la altura */
     }
 
+    .contacRightImage {
+        display: block;
+        width: 100%;
+        height: 100%;
+        /*object-fit: cover;  Mantener proporciones y cubrir el área */
+    }
+
+    .videoContainer {
+        display: none;
+      }
+
+      .videoContainer iframe {
+        display: none;
+        aspect-ratio: 340 / 220;  /*Mantiene la proporción del video */
+
+      }
+
     .verticalTextContainer{
-        display: block; 
+        display: block;
         width: 10%;
         height: 100%;
         position: absolute;
         left:-40px;
         top: 30px;
-
     }
 
     .overlayVertcialText{
-        display: block; 
-        writing-mode: vertical-rl; 
-        transform: rotate(180deg);
+        display: none;
     }
-    
-    
+
+
     /* Contenedor principal de los párrafos con scroll horizontal */
     /* Contenedor principal de los párrafos */
     .scrollContainer {
@@ -319,8 +365,16 @@
         margin-left: 30px;
 
     }
+    .paragraphItem:nth-child(5) {
+        display: none;
+    }
 
-    
+    .paragraphItem:nth-child(6) {
+        display: none;
+    }
+      
+
+
 }
 
 /* Updated desktop media query */
@@ -347,9 +401,9 @@
         align-self: flex-start;
         font-family: 'Outfit', sans-serif;
     }
-    
+
     .headerRightContainer {
-        display: flex; 
+        display: flex;
         width: 240px;
         height: 140px;
         flex-direction: column;
@@ -410,5 +464,14 @@
         margin-top: 220px; /* Cuarta columna desplazada aún más */
         margin-left: 30px;
 
-    }    
+    }
+    .paragraphItem:nth-child(5) {
+        display: none;
+    }
+
+    
+    .paragraphItem:nth-child(6) {
+        display: none;
+    }
+      
 }

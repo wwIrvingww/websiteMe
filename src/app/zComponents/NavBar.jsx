@@ -1,14 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import styles from './NavBar.module.css';
 
 export default function NavBar() {
   const pathname = usePathname(); // Para obtener la ruta actual
   const [isOpen, setIsOpen] = useState(false); // Estado para controlar si la barra está abierta o cerrada
+  const navRef = useRef(null); // Referencia para la barra de navegación
 
   const toggleNavBar = () => {
     setIsOpen(!isOpen); // Cambiar el estado entre abierto y cerrado
   };
+
+  // Cerrar la barra de navegación si se hace clic fuera de ella
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setIsOpen(false); // Cerrar la barra de navegación
+      }
+    };
+
+    // Agregar el event listener cuando el componente se monte
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Limpiar el event listener cuando el componente se desmonte
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [navRef]);
 
   return (
     <>
@@ -18,7 +36,7 @@ export default function NavBar() {
       </div>
 
       {/* Barra de navegación */}
-      <nav className={`${styles.navbarContainer} ${isOpen ? styles.open : ''}`}>
+      <nav ref={navRef} className={`${styles.navbarContainer} ${isOpen ? styles.open : ''}`}>
         <ul className={styles.navList}>
           <li className={styles.navItem}>
             <a href="/" className={pathname === "/" ? `${styles.navLink} ${styles.active}` : styles.navLink}>Fabricio</a>

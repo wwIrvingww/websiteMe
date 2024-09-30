@@ -52,14 +52,19 @@ const AboutMe = () => {
       {/*Header Image */}
       <div className={styles.headerContainer}>
         <div className={styles.overlayTextContainer}>
-          <p className={styles.overlayText}>Let me talk...</p>
+          <p className={styles.overlayText}>Puedes ver mi CV acá ↓</p>
         </div>
         <div className={styles.contactImageContainer}>
-          <img
+        <a href="/CV-Fabricio.pdf" download target="_blank" rel="noopener noreferrer">
+          { <img
             src="https://i.pinimg.com/736x/6f/58/87/6f58875204d87f535eb17badd7bed1a8.jpg"
             alt="Contact Image"
             className={styles.contactImage}
-          />
+          /> }
+          <div className={styles.cvContainer}>
+          curriculum
+          </div>
+          </a>
         </div>
       </div>
 
@@ -74,17 +79,19 @@ const AboutMe = () => {
       {/*Header Right Image*/}
       <div className={styles.headerRightContainer}>
         <div className={styles.verticalTextContainer}>
-          <p className={styles.overlayVertcialText}>Nice to</p>
+          <p className={styles.overlayVertcialText}>¡Ve mi vídeo!</p>
         </div>
         <div className={styles.overlayRightTextContainer}>
-          <p className={styles.overlayRightText}>meet you!</p>
+          <p className={styles.overlayRightText}>¡Ve mi vídeo!</p>
         </div>
         <div className={styles.contactRightImageContainer}>
-          <img
+        <iframe src="https://www.youtube.com/embed/PQlG1gznMBE?si=01qbtbDaf3BqPszu&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+          {/* <img
             src="https://i.pinimg.com/736x/6f/58/87/6f58875204d87f535eb17badd7bed1a8.jpg"
             alt="Contact Image"
             className={styles.contacRightImage}
-          />
+          /> */}
         </div>
       </div>
 
@@ -97,43 +104,46 @@ const AboutMe = () => {
 
           <div className={styles.paragraphItem}>
             <NParagraph 
-              subtitle="Sobre mi alivio" 
-              content={`El diseño UI/UX fue para mí la luz que iluminó mi camino y ahora es la lámpara que me ayuda a caminar. 
-              Sin embargo esto aún no es suficiente para mí, me gusta seguir creciendo, agregando piezas a mi rompecabezas para 
-              convertirme cada vez más en una persona más completa.
-
-              Desarrollar mis propios diseños fue una pieza esencial para completar mi rompecabezas porque de esa manera me aseguro 
-              de que hasta el más mínimo detalle esté correctamente implementado.
-
-              No solo me concentro en resolver mis problemas, me gusta ayudar a cualquier que lo necesite y hacerlo sentir participe 
-              de la solución.`}
+              subtitle="Sobre mí en el diseño UX/UI" 
+              content={`En el tercer año de mi carrera cursé la clase Human Computer Interaction (HCI), en la cual aprendí las bases del diseño UI y UX. Durante el semestre llevamos a cabo tres rediseños y el desarrollo (en versión prototipo) de una app completamente libre. 
+                Aprendí sobre temas como teoría del color, los principios de gestalt, realización de prototipos y otros temas que fueron de gran valor para mi formación. 
+                Después de concluir este semestre he procurado practicar mis habilidades como UX designer en proyectos realizados en otras clases, asegurándome de desarrollar no solo interfaces estéticas, sino también funcionales. Además, he ampliado mis conocimientos con lecturas como “Don’t make me think” de Steve Krug y “The design of everyday things” de Donald Norman.`.replace('Después de concluir', '<br />Después de concluir') }
             />
           </div>
 
           <div className={styles.paragraphItem}>
             <NParagraph 
-              subtitle="Acerca del silencio" 
-              content={`Por lo general soy una persona silenciosa, no me gusta el ruido y si no tengo nada que decir me quedo callado. 
-              No me gusta hablar por mis proyectos, prefiero que ellos lo hagan por mí y no me gusta llamar la atención de forma escandalosa, 
-              prefiero hacerlo de una manera más sigilosa, elegante.
-
-              Uno de los pilares en mi vida es la diferencia, es el camino que siempre tomo, porque me gusta resaltar y creo que esta es 
-              la mejor manera de hacerlo. Mis proyectos, mi forma de vestir, mi trabajo, en todo siempre apunto a no ser como el resto.`}
+              subtitle="Mi día a día" 
+              content={`Mi enfoque comienza con una escucha activa de las expectativas del cliente, ya que muchas veces ellos tienen una visión general, pero carecen de detalles específicos sobre el diseño. Desde la concepción inicial de una página web, ya sea un sitio informativo o una plataforma de comercio electrónico, mi responsabilidad es asegurarme de que cada elemento sea funcional y estéticamente atractivo. Ofrezco servicios que abarcan desde la ideación y el wireframing hasta el desarrollo completo de la interfaz, utilizando herramientas como Figma para la creación de prototipos.`}
             />
           </div>
 
           <div className={styles.paragraphItem}>
-            <NParagraph 
-              subtitle="Dentro de mi casa" 
-              content={`Fuera del ámbito profesional, la actividad física forma una parte esencial de mi vida, con la natación y el tenis 
-              como mis deportes favoritos. En cuanto a la música, Mon Laferte ocupa un lugar especial en mi lista de reproducción.
+          <NParagraph 
+          subtitle="Enfoque en Diseño Web" 
+          content={`En términos de habilidades técnicas, manejo HTML, CSS y JavaScript, así como frameworks como React y Next (este sitio está hecho con Next), lo que me permite construir sitios responsivos que se adaptan a diversas plataformas. 
+          Mi papel implica una combinación de empatía y comunicación efectiva, donde la capacidad de entender las inquietudes del cliente y traducirlas en soluciones concretas es fundamental. La habilidad para adaptarme a diferentes perspectivas y trabajar en equipo es esencial para lograr resultados que superen las expectativas, creando un ambiente donde la creatividad y la funcionalidad se entrelazan.`.replace('Mi papel implica', '<br />Mi papel implica')}
+          />
 
-              Disfruto de la literatura, tanto escribirla como leerla, ya que después de todo somos las historias que nos contamos. 
-              No todos lo saben, pero también tengo un gran interés en la industria de la moda, así que es probable que algún día entre 
-              a ese campo.
+          </div>
+          <div className={styles.paragraphItem}>
+          <a href="/CV-Fabricio.pdf" download target="_blank" rel="noopener noreferrer">
+              <NParagraph 
+                subtitle="Descargar CV" 
+                content={``}
+              />
+            </a>
+          </div>
+          <div className={styles.paragraphItem}>
+              <NParagraph 
+                subtitle="¡Ve mi vídeo!" 
+                content={``}
+              />
+          </div>
 
-              Oscar Wilde dijo que sea yo mismo porque los demás puestos están ocupados y eso es lo que haré hasta el día de mi muerte.`}
-            />
+
+          <div className={styles.videoContainer}>
+          <iframe src="https://www.youtube.com/embed/PQlG1gznMBE?si=01qbtbDaf3BqPszu&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
       </div>
