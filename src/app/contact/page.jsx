@@ -41,7 +41,7 @@ const Contact = () => {
     <div className={styles.contactWrapper}>
       <div className={styles.contactContainer}>
         <h2 className={styles.title}>Contact</h2>
-        <p className={styles.email}>Irving00morales@Gmail.Com</p>
+        <p className={styles.email}>facosta.bricio@gmail.com</p>
         <p className={styles.handle}>@WwIrvingwW</p>
         <p className={styles.name}>Irving-Acosta</p>
       </div>

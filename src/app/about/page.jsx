@@ -85,7 +85,8 @@ const AboutMe = () => {
           <p className={styles.overlayRightText}>¡Ve mi vídeo!</p>
         </div>
         <div className={styles.contactRightImageContainer}>
-        <iframe src="https://www.youtube.com/embed/PQlG1gznMBE?si=01qbtbDaf3BqPszu&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          
+        <iframe  src="https://www.youtube.com/embed/P6D4jpzN29s?si=C0kXkmvM9-4jJBFO&amp;controls=0"  title="Fabricio Presentacion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
           {/* <img
             src="https://i.pinimg.com/736x/6f/58/87/6f58875204d87f535eb17badd7bed1a8.jpg"
@@ -140,11 +141,8 @@ const AboutMe = () => {
                 content={``}
               />
           </div>
-
-
           <div className={styles.videoContainer}>
-          <iframe src="https://www.youtube.com/embed/PQlG1gznMBE?si=01qbtbDaf3BqPszu&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
+          <iframe src="https://www.youtube.com/embed/P6D4jpzN29s?si=C0kXkmvM9-4jJBFO&amp;controls=0" title="YFabricio Presentacion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         </div>
       </div>
     </div>
@@ -152,3 +150,4 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
+
